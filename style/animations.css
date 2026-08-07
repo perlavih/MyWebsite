@@ -1,0 +1,72 @@
+
+body::after {
+  transition: opacity 0.8s ease-in-out;
+}
+
+body.night::after {
+  opacity: 1;
+}
+
+.aero-window::before {
+  transition: background 0.8s ease-in-out;
+}
+
+#theme-toggle {
+  position: relative;
+}
+
+#theme-toggle .theme-icon {
+  position: absolute;
+  transition: opacity 0.35s ease, transform 0.5s ease;
+}
+
+#theme-toggle .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(-70deg) scale(0.45);
+}
+
+body.night #theme-toggle .theme-icon-sun {
+  opacity: 0;
+  transform: rotate(70deg) scale(0.45);
+}
+
+body.night #theme-toggle .theme-icon-moon {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* Y2K social-icon hover: a glossy pulse with cyan and pink neon glow. */
+.social-button img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.social-button:hover img,
+.social-button:focus-visible img {
+  animation: y2k-icon-pulse 1.4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 4px rgba(49, 223, 255, 0.45));
+  transform: scale(1.04);
+}
+
+@keyframes y2k-icon-pulse {
+  from {
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.55)) drop-shadow(0 0 2px rgba(49, 223, 255, 0.3));
+    transform: scale(1.02);
+  }
+  to {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.75)) drop-shadow(0 0 5px rgba(49, 223, 255, 0.45));
+    transform: scale(1.07);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after,
+  .aero-window::before,
+  #theme-toggle .theme-icon {
+    transition-duration: 0.01ms;
+  }
+
+  .social-button img {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+}

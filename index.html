@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perla Vitória — Portfólio</title>
+    <link rel="stylesheet" href="style/variables.css">
+    <link rel="stylesheet" href="style/themes.css">
+    <link rel="stylesheet" href="style/layouts.css">
+    <link rel="stylesheet" href="style/animations.css">
+    <link rel="stylesheet" href="style/reponsive.css">
+</head>
+<body>
+    <div class="aero-window">
+        <div class="aero-titlebar">
+          <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="1" width="14" height="14" rx="2" fill="#4a90d9"/><rect x="4" y="4" width="8" height="1.5" rx="0.75" fill="#fff"/><rect x="4" y="7" width="8" height="1.5" rx="0.75" fill="#fff"/><rect x="4" y="10" width="5" height="1.5" rx="0.75" fill="#fff"/></svg>
+          <span class="aero-titlebar-text">PerlaVih.exe - Home</span>
+          <div class="aero-caption">
+            <button class="min" type="button" aria-label="Minimize"></button>
+            <button class="max" type="button" aria-label="Maximize"></button>
+            <button class="close" type="button" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="aero-menubar">
+            <button class="button" type="button">Home</button>
+            <button class="button" type="button">Gallery</button>
+            <button class="button" type="button">Blog</button>
+            <button class="button2" type="button" aria-label="Translate" title="Translate">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2c0 4-2 7-5 9m2-5c1.5 2 3.5 3.5 6 4M14 19l3-7 3 7m-5-2h4" /></svg>
+            </button>
+            <button class="button2" id="theme-toggle" type="button" aria-label="Switch themes" title="Switch themes" aria-pressed="false">
+                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" /></svg>
+                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" /></svg>
+            </button>
+        </div>
+        <div class="aero-body">
+          <aside class="profile-sidebar" aria-label="Profile information">
+            <div class="profile-photo" aria-label="Profile photo"><img src="assets/icons/aero-pfp-256.png" alt=""></div>
+            <h1>Perla Vih</h1>
+            <p class="profile-pronouns">She/Her</p>
+            <p class="profile-info">A short description or other information.</p>
+
+            <nav class="social-links" aria-label="Social media">
+              <a class="social-button" aria-label="Discord" href="https://discord.com/users/668624752696623156" target="_blank">
+                <img src="assets/icons/discord.png" alt="discord">
+              </a>
+              <a class="social-button" aria-label="Youtube" href="#" target="_blank">
+                <img src="assets/icons/youtube.png" alt="Youtube">
+              </a>
+              <a class="social-button" aria-label="Bluesky" href="#" target="_blank">
+                <img src="assets/icons/bluesky.png" alt="bluesky">
+              </a>
+              <a class="social-button" aria-label="Instagram" href="#" target="_blank">
+                <img src="assets/icons/instagram.png" alt="instagram">
+              </a>
+            </nav>
+          </aside>
+
+          <main class="about-content">
+            <article>
+              <h2>About me</h2>
+              <p>
+                This is the main area for writing about yourself. It has its own scroll,
+                so longer content will not change the window size.
+              </p>
+              <p>
+                You can include your journey, interests, projects, experience, or any other
+                information you would like to share on your portfolio.
+              </p>
+              <p>
+                The current colors are only placeholders and can be customized later.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, dignissimos rem facilis earum quas ut. Amet explicabo eius nam, inventore qui impedit perspiciatis, illo eveniet vel repudiandae, incidunt blanditiis quasi.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque enim consequuntur temporibus, itaque, suscipit odit quod nemo fugiat voluptate sequi praesentium quasi commodi quos deleniti reiciendis, ad cum possimus quaerat.
+              </p>
+            </article>
+          </main>
+        </div>
+        <div class="aero-statusbar">
+          <span id="mode-status">Mode: Day</span>
+          <span class="aero-status-grow"></span>
+          <span>Made by @perlavih</span>
+          <span class="aero-gripper"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

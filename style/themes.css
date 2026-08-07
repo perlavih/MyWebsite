@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -10px;
+    background: url(../assets/img/backgroundday.jpg) center / cover no-repeat;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: -10px;
+    background: url(../assets/img/backgroundnight.jpg) center / cover no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}

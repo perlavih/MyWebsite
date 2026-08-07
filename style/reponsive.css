@@ -1,0 +1,14 @@
+@media (max-width: 480px) {
+  .aero-window .aero-body {
+    grid-template-columns: 35% 65%;
+    padding: 0;
+  }
+
+  .profile-sidebar {
+    padding: 5px;
+  }
+
+  .profile-photo {
+    width: 52px;
+  }
+}
