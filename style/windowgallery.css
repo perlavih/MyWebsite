@@ -1,0 +1,21 @@
+.aero-window.is-hidden { display: none; }
+
+.window-gallery {
+  position: fixed;
+  top: calc(50% - 18px);
+  left: 50%;
+  z-index: 3;
+  width: min(820px, calc(100vw - 48px));
+  transform: translate(-50%, -50%);
+}
+
+.window-gallery .gallery-body {
+  display: block;
+  height: min(570px, calc(100vh - 120px));
+  margin: 0 var(--frame) var(--frame);
+  padding: 26px;
+  overflow: auto;
+  border: 1px solid var(--window-border);
+  border-radius: 0 0 3px 3px;
+  background: var(--gallery-surface);
+}

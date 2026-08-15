@@ -1,29 +1,79 @@
-body {
-    min-height: 100vh;
-    position: relative;
-    background: var(--background);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: -10px;
-    background: url(../assets/img/backgroundday.jpg) center / cover no-repeat;
-    z-index: -1;
+body.night {
+  --background: var(--night-background);
+  --window-text: var(--night-window-text);
+  --window-muted: var(--night-window-muted);
+  --window-glass: var(--night-glass);
+  --menu-gradient: var(--night-menu-gradient);
+  --surface-gradient: var(--night-surface-gradient);
+  --panel-background: var(--night-panel);
+  --window-border: var(--night-border);
+  --soft-border: var(--night-soft-border);
+  --status-gradient: var(--night-status-gradient);
+  --scroll-track: var(--night-scroll-track);
+  --scroll-thumb: var(--night-scroll-thumb);
+  --gallery-surface: var(--night-gallery-surface);
+  --gallery-text: var(--night-gallery-text);
+  --gallery-muted: var(--night-gallery-muted);
+  --chat-surface: var(--night-chat-surface);
+  --chat-header: var(--night-chat-header);
+  --chat-border: var(--night-chat-border);
+  --chat-received: var(--night-chat-received);
+  --chat-sent: var(--night-chat-sent);
 }
 
 body::after {
-    content: "";
-    position: fixed;
-    inset: -10px;
-    background: url(../assets/img/backgroundnight.jpg) center / cover no-repeat;
-    opacity: 0;
-    pointer-events: none;
-    z-index: -1;
+  transition: opacity .8s ease-in-out;
+}
+
+body.night::after {
+  opacity: 1;
+}
+
+.aero-window::before {
+  transition: background .8s ease-in-out;
+}
+
+body.night .aero-titlebar-text {
+  color: #1b1b1b;
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 7px #fff, 0 0 10px #fff;
+}
+
+body.night .aero-menubar .button2 {
+  border-color: #397ba5;
+  box-shadow: 0 0 3px #356c91;
+}
+
+body.night .aero-menubar .button2:hover {
+  border-color: #5c9ed1;
+  box-shadow: 0 0 3px #5c9ed1;
+}
+
+body.night .aero-menubar .button:hover {
+  color: #1b1b1b;
+  background: linear-gradient(#eaf4fd, #cfe8fb);
+  box-shadow: inset 0 0 0 1px #b5dcfb;
+}
+
+#theme-toggle {
+  position: relative; 
+}
+
+#theme-toggle .theme-icon { 
+  position: absolute; 
+  transition: opacity .35s ease, transform .5s ease; 
+}
+
+#theme-toggle .theme-icon-moon {
+  opacity: 0; 
+  transform: rotate(-70deg) scale(.45);
+}
+
+body.night #theme-toggle .theme-icon-sun {
+  opacity: 0; 
+  transform: rotate(70deg) scale(.45); 
+}
+
+body.night #theme-toggle .theme-icon-moon {
+  opacity: 1; 
+  transform: rotate(0) scale(1); 
 }

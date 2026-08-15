@@ -1,53 +1,133 @@
-const aeroWindow = document.querySelector('.aero-window');
+const aeroWindow = document.querySelector('#window-home');
 const titlebar = aeroWindow.querySelector('.aero-titlebar');
 const themeToggle = document.querySelector('#theme-toggle');
 const modeStatus = document.querySelector('#mode-status');
+const taskbarTime = document.querySelector('#taskbar-time');
+const taskbarDate = document.querySelector('#taskbar-date');
+const taskbarApps = document.querySelectorAll('.left-side ul li button');
+const windows = document.querySelectorAll('.aero-window');
+const windowTriggers = document.querySelectorAll('[data-open-window]');
 
-let pointerOffsetX = 0;
-let pointerOffsetY = 0;
+let highestWindowLayer = 5;
 
-titlebar.addEventListener('pointerdown', (event) => {
-  // Window controls remain clickable instead of starting a drag.
-  if (event.target.closest('button')) return;
-
-  const bounds = aeroWindow.getBoundingClientRect();
-  pointerOffsetX = event.clientX - bounds.left;
-  pointerOffsetY = event.clientY - bounds.top;
-
-  aeroWindow.style.position = 'fixed';
-  aeroWindow.style.left = `${bounds.left}px`;
-  aeroWindow.style.top = `${bounds.top}px`;
-  aeroWindow.classList.add('is-dragging');
-  titlebar.setPointerCapture(event.pointerId);
-});
-
-titlebar.addEventListener('pointermove', (event) => {
-  if (!titlebar.hasPointerCapture(event.pointerId)) return;
-
-  const maxLeft = window.innerWidth - aeroWindow.offsetWidth;
-  const maxTop = window.innerHeight - aeroWindow.offsetHeight;
-  const left = Math.min(Math.max(0, event.clientX - pointerOffsetX), Math.max(0, maxLeft));
-  const top = Math.min(Math.max(0, event.clientY - pointerOffsetY), Math.max(0, maxTop));
-
-  aeroWindow.style.left = `${left}px`;
-  aeroWindow.style.top = `${top}px`;
-});
-
-function stopDragging(event) {
-  if (titlebar.hasPointerCapture(event.pointerId)) {
-    titlebar.releasePointerCapture(event.pointerId);
-  }
-  aeroWindow.classList.remove('is-dragging');
+function bringToFront(appWindow) {
+  highestWindowLayer += 1;
+  appWindow.style.zIndex = String(highestWindowLayer);
 }
 
-titlebar.addEventListener('pointerup', stopDragging);
-titlebar.addEventListener('pointercancel', stopDragging);
+function setTaskbarSelection(windowName, isOpen) {
+  taskbarApps.forEach((button) => {
+    if (button.dataset.openWindow !== windowName) return;
+    button.classList.toggle('is-selected', isOpen);
+    button.setAttribute('aria-pressed', String(isOpen));
+  });
+}
+
+function showWindow(windowName) {
+  const appWindow = document.querySelector(`#window-${windowName}`);
+  if (!appWindow) return;
+  appWindow.classList.remove('is-hidden');
+  appWindow.classList.remove('is-closing', 'is-minimizing');
+  appWindow.classList.add('is-opening');
+  appWindow.setAttribute('aria-hidden', 'false');
+  bringToFront(appWindow);
+  setTaskbarSelection(windowName, true);
+  appWindow.addEventListener('animationend', () => appWindow.classList.remove('is-opening'), { once: true });
+}
+
+function hideWindow(appWindow, animationClass) {
+  appWindow.classList.remove('is-opening');
+  appWindow.classList.add(animationClass);
+  appWindow.addEventListener('animationend', (event) => {
+    if (event.target !== appWindow) return;
+    appWindow.classList.remove(animationClass);
+    appWindow.classList.add('is-hidden');
+    appWindow.setAttribute('aria-hidden', 'true');
+    setTaskbarSelection(appWindow.dataset.window, false);
+  }, { once: true });
+}
+
+windows.forEach((appWindow) => {
+  const appTitlebar = appWindow.querySelector('.aero-titlebar');
+  let pointerOffsetX = 0;
+  let pointerOffsetY = 0;
+
+  appWindow.addEventListener('pointerdown', () => bringToFront(appWindow));
+
+  appTitlebar.addEventListener('pointerdown', (event) => {
+    if (event.target.closest('button')) return;
+    const bounds = appWindow.getBoundingClientRect();
+    pointerOffsetX = event.clientX - bounds.left;
+    pointerOffsetY = event.clientY - bounds.top;
+    appWindow.style.position = 'fixed';
+    appWindow.style.transform = 'none';
+    appWindow.style.left = `${bounds.left}px`;
+    appWindow.style.top = `${bounds.top}px`;
+    appWindow.classList.add('is-dragging');
+    appTitlebar.setPointerCapture(event.pointerId);
+  });
+
+  appTitlebar.addEventListener('pointermove', (event) => {
+    if (!appTitlebar.hasPointerCapture(event.pointerId)) return;
+    const maxLeft = window.innerWidth - appWindow.offsetWidth;
+    const maxTop = window.innerHeight - appWindow.offsetHeight;
+    appWindow.style.left = `${Math.min(Math.max(0, event.clientX - pointerOffsetX), Math.max(0, maxLeft))}px`;
+    appWindow.style.top = `${Math.min(Math.max(0, event.clientY - pointerOffsetY), Math.max(0, maxTop))}px`;
+  });
+
+  const stopDragging = (event) => {
+    if (appTitlebar.hasPointerCapture(event.pointerId)) appTitlebar.releasePointerCapture(event.pointerId);
+    appWindow.classList.remove('is-dragging');
+  };
+  appTitlebar.addEventListener('pointerup', stopDragging);
+  appTitlebar.addEventListener('pointercancel', stopDragging);
+
+  appWindow.querySelectorAll('.min, .close').forEach((button) => {
+    button.addEventListener('click', () => {
+      hideWindow(appWindow, button.classList.contains('min') ? 'is-minimizing' : 'is-closing');
+    });
+  });
+});
+
+windowTriggers.forEach((trigger) => trigger.addEventListener('click', () => showWindow(trigger.dataset.openWindow)));
 
 themeToggle.addEventListener('click', () => {
   const isNight = document.body.classList.toggle('night');
 
   modeStatus.textContent = `Mode: ${isNight ? 'Night' : 'Day'}`;
   themeToggle.setAttribute('aria-pressed', String(isNight));
-  themeToggle.setAttribute('aria-label', isNight ? 'Ativar modo diurno' : 'Ativar modo noturno');
-  themeToggle.title = isNight ? 'Ativar modo diurno' : 'Ativar modo noturno';
 });
+
+function updateTaskbarClock() {
+  const now = new Date();
+  taskbarTime.textContent = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  taskbarDate.textContent = now.toLocaleDateString('pt-BR');
+}
+
+updateTaskbarClock();
+setInterval(updateTaskbarClock, 1000);
+
+if (taskbarApps.length) {
+  taskbarApps[0].classList.add('is-selected');
+  taskbarApps[0].setAttribute('aria-pressed', 'true');
+}
+
+// Preload wallpaper images and reveal them with a fade-in when ready
+function preloadWallpapers() {
+  const paths = ['assets/img/backgroundday.jpg', 'assets/img/backgroundnight.jpg'];
+  const loads = paths.map((p) => new Promise((resolve) => {
+    const img = new Image();
+    img.src = p;
+    img.onload = () => resolve();
+    img.onerror = () => resolve();
+  }));
+  return Promise.all(loads);
+}
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  preloadWallpapers().then(() => document.body.classList.add('bg-ready'));
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    preloadWallpapers().then(() => document.body.classList.add('bg-ready'));
+  });
+}

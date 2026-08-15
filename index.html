@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perla Vitória — Portfólio</title>
+    <link rel="stylesheet" href="style/body.css">
     <link rel="stylesheet" href="style/variables.css">
     <link rel="stylesheet" href="style/themes.css">
-    <link rel="stylesheet" href="style/layouts.css">
+    <link rel="stylesheet" href="style/windowmain.css">
+    <link rel="stylesheet" href="style/windowgallery.css">
+    <link rel="stylesheet" href="style/windowschat.css">
     <link rel="stylesheet" href="style/animations.css">
-    <link rel="stylesheet" href="style/reponsive.css">
+    <link rel="stylesheet" href="style/responsive.css">
 </head>
 <body>
-    <div class="aero-window">
+  <div class="recycle-bin">
+    <img src="assets/icons/recycle bin empty.ico" alt="recycle bin">
+    <span>Recycle Bin</span>
+  </div>
+    <div class="aero-window window-home" id="window-home" data-window="home">
         <div class="aero-titlebar">
-          <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="1" width="14" height="14" rx="2" fill="#4a90d9"/><rect x="4" y="4" width="8" height="1.5" rx="0.75" fill="#fff"/><rect x="4" y="7" width="8" height="1.5" rx="0.75" fill="#fff"/><rect x="4" y="10" width="5" height="1.5" rx="0.75" fill="#fff"/></svg>
+          <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/></svg>
           <span class="aero-titlebar-text">PerlaVih.exe - Home</span>
           <div class="aero-caption">
             <button class="min" type="button" aria-label="Minimize"></button>
@@ -22,9 +29,9 @@
           </div>
         </div>
         <div class="aero-menubar">
-            <button class="button" type="button">Home</button>
-            <button class="button" type="button">Gallery</button>
-            <button class="button" type="button">Blog</button>
+            <button class="button" type="button" data-open-window="home">Home</button>
+            <button class="button" type="button" data-open-window="gallery">Gallery</button>
+            <button class="button" type="button" data-open-window="chat">Chat</button>
             <button class="button2" type="button" aria-label="Translate" title="Translate">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2c0 4-2 7-5 9m2-5c1.5 2 3.5 3.5 6 4M14 19l3-7 3 7m-5-2h4" /></svg>
             </button>
@@ -82,6 +89,63 @@
           <span class="aero-gripper"></span>
         </div>
     </div>
+
+    <section class="aero-window window-gallery is-hidden" id="window-gallery" data-window="gallery" aria-label="Gallery">
+      <div class="aero-titlebar">
+        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/></svg>
+        <span class="aero-titlebar-text">PerlaVih.exe - Gallery</span>
+        <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
+      </div>
+      <main class="aero-body gallery-body">
+        <header><p>ART ARCHIVE</p></header>
+        <div class="gallery-grid">
+      
+        </div>
+      </main>
+    </section>
+
+    <section class="aero-window window-chat is-hidden" id="window-chat" data-window="chat" aria-label="Chat">
+      <div class="aero-titlebar">
+        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
+        <span class="aero-titlebar-text">PerlaVih.exe - Chat</span>
+        <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
+      </div>
+      <main class="aero-body chat-body">
+
+      </main>
+    </section>
+
+      <footer>
+        <div class="left-side">
+          <ul>
+            <li>
+              <button type="button" data-open-window="home">
+                <img src="assets/icons/msn avatar icon.ico" alt="Avatar">
+              </button>
+            </li>
+            <li><button type="button" data-open-window="gallery">
+              <img src="assets/icons/mspaint icon.ico" alt="Galery">
+            </button>
+            </li>
+            <li>
+              <button type="button" data-open-window="chat">
+                <img src="assets/icons/frutiger aero globe icon.ico" alt="chat">
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="right-side">
+          <div id="bar-icons" aria-label="Status do sistema">
+            <svg class="tray-icon tray-icon-network" viewBox="0 0 24 24" role="img" aria-label="Rede"><path d="M3 20h3v-4H3zm5 0h3v-8H8zm5 0h3V8h-3zm5 0h3V3h-3z"/></svg>
+            <svg class="tray-icon tray-icon-volume" viewBox="0 0 24 24" role="img" aria-label="Volume"><path d="M4 10v4h4l5 4V6l-5 4z"/><path d="M16 9.5a4 4 0 0 1 0 5M19 7a7.5 7.5 0 0 1 0 10" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div id="date-time-section">
+            <h2 id="taskbar-time"></h2>
+            <h2 id="taskbar-date"></h2>
+          </div>
+          <button id="bar"></button>
+        </div>
+      </footer>
     <script src="script.js"></script>
 </body>
 </html>
