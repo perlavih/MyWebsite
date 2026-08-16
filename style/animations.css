@@ -64,3 +64,13 @@ body.bg-ready.night::after {
 .aero-window.is-closing {
   animation: aero-window-close 180ms ease-in both;
 }
+
+.aero-window {
+  transition:
+    left 220ms cubic-bezier(.2, .8, .25, 1),
+    top 220ms cubic-bezier(.2, .8, .25, 1),
+    width 220ms cubic-bezier(.2, .8, .25, 1),
+    height 220ms cubic-bezier(.2, .8, .25, 1),
+    transform 220ms cubic-bezier(.2, .8, .25, 1),
+    box-shadow 220ms ease;
+}

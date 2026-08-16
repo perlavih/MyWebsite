@@ -1,0 +1,227 @@
+.aero-window .home-body {
+  position: relative;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  margin: 0 var(--frame);
+  height: 315px;
+  padding: 0;
+  background: transparent;
+  color: var(--window-text);
+  border: 1px solid var(--window-border);
+  transition: background .8s ease-in-out, color .8s ease-in-out, border-color .8s ease-in-out, box-shadow .8s ease-in-out;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  font-family: 'Frutiger', "Segoe UI", Tahoma, Geneva, Verdana, system-ui, sans-serif;
+}
+
+.aero-window .home-body::before,
+.aero-window .home-body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .8s ease-in-out;
+}
+
+.aero-window .home-body::before {
+  background: var(--panel-background);
+  opacity: 1;
+}
+
+.aero-window .home-body::after {
+  background: var(--night-panel);
+  opacity: 0;
+}
+
+body.night .aero-window .home-body::before {
+  opacity: 0;
+}
+
+body.night .aero-window .home-body::after {
+  opacity: 1;
+}
+
+.aero-window .home-body > * {
+  position: relative;
+  z-index: 1;
+}
+.aero-window .home-body:last-child {
+  margin-bottom: var(--frame);
+  border-radius: 0 0 3px 3px;
+}
+
+.profile-sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 7px;
+  background: transparent;
+  border-right: 1px solid var(--soft-border);
+}
+
+.profile-sidebar::before,
+.profile-sidebar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .8s ease-in-out;
+}
+
+.profile-sidebar::before {
+  background: var(--surface-gradient);
+  opacity: 1;
+}
+
+.profile-sidebar::after {
+  background: var(--night-surface-gradient);
+  opacity: 0;
+}
+
+body.night .profile-sidebar::before {
+  opacity: 0;
+}
+
+body.night .profile-sidebar::after {
+  opacity: 1;
+}
+
+.profile-sidebar > * {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-photo img {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 140px;
+}
+
+.profile-sidebar h1 {
+  margin-top: 7px;
+  font-size: 24px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.profile-pronouns {
+  font-size: 11px;
+  color: var(--window-muted);
+}
+
+.profile-info {
+  margin-top: 7px;
+  font-size: 10px;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--window-muted);
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.social-button {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  aspect-ratio: 1;
+  background: transparent;
+}
+
+.social-button:focus-visible {
+  outline: 2px solid #45d8ff;
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+.social-button img {
+  display: block;
+  width: 100%;
+  max-width: 38px;
+  height: auto;
+  max-height: 38px;
+  object-fit: contain;
+}
+
+.about-content {
+  position: relative;
+  min-width: 0;
+  overflow-y: auto;
+  padding: 12px;
+  background: transparent;
+  scrollbar-color: var(--soft-border) var(--scroll-track);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+.about-content::before,
+.about-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .8s ease-in-out;
+}
+
+.about-content::before {
+  background: var(--surface-gradient);
+  opacity: 1;
+}
+
+.about-content::after {
+  background: var(--night-surface-gradient);
+  opacity: 0;
+}
+
+body.night .about-content::before {
+  opacity: 0;
+}
+
+body.night .about-content::after {
+  opacity: 1;
+}
+
+.about-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.about-content article {
+  max-width: 62ch;
+}
+
+.about-content h2 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.about-content p {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.aero-window.is-maximized .home-body {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: minmax(220px, 28%) minmax(0, 1fr);
+  }
+  
+  .aero-window.is-maximized .profile-sidebar {
+    padding: 18px 12px 12px;
+  }
+  
+  .aero-window.is-maximized .about-content {
+    padding: 18px 18px 12px;
+  }

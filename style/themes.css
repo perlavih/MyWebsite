@@ -15,10 +15,6 @@ body.night {
   --gallery-text: var(--night-gallery-text);
   --gallery-muted: var(--night-gallery-muted);
   --chat-surface: var(--night-chat-surface);
-  --chat-header: var(--night-chat-header);
-  --chat-border: var(--night-chat-border);
-  --chat-received: var(--night-chat-received);
-  --chat-sent: var(--night-chat-sent);
 }
 
 body::after {
@@ -30,7 +26,7 @@ body.night::after {
 }
 
 .aero-window::before {
-  transition: background .8s ease-in-out;
+  transition: background-color .8s ease-in-out, box-shadow .8s ease-in-out, opacity .8s ease-in-out;
 }
 
 body.night .aero-titlebar-text {
@@ -52,6 +48,97 @@ body.night .aero-menubar .button:hover {
   color: #1b1b1b;
   background: linear-gradient(#eaf4fd, #cfe8fb);
   box-shadow: inset 0 0 0 1px #b5dcfb;
+}
+
+.aero-window .aero-menubar,
+.aero-window .aero-body,
+.profile-sidebar,
+.about-content,
+.aero-window .aero-statusbar,
+.window-gallery .gallery-body,
+.window-chat .chatbox-body {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border-color: var(--window-border);
+  transition: border-color .8s ease-in-out, box-shadow .8s ease-in-out, color .8s ease-in-out;
+}
+
+.aero-window .aero-menubar::before,
+.aero-window .aero-menubar::after,
+.aero-window .aero-body::before,
+.aero-window .aero-body::after,
+.profile-sidebar::before,
+.profile-sidebar::after,
+.about-content::before,
+.about-content::after,
+.aero-window .aero-statusbar::before,
+.aero-window .aero-statusbar::after,
+.window-gallery .gallery-body::before,
+.window-gallery .gallery-body::after,
+.window-chat .chatbox-body::before,
+.window-chat .chatbox-body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity .8s ease-in-out;
+}
+
+body:not(.night) .aero-window .aero-menubar::before,
+body:not(.night) .aero-window .aero-body::before,
+body:not(.night) .profile-sidebar::before,
+body:not(.night) .about-content::before,
+body:not(.night) .aero-window .aero-statusbar::before,
+body:not(.night) .window-gallery .gallery-body::before,
+body:not(.night) .window-chat .chatbox-body::before {
+  background: var(--day-menu-gradient);
+  opacity: 1;
+}
+
+body:not(.night) .aero-window .aero-menubar::after,
+body:not(.night) .aero-window .aero-body::after,
+body:not(.night) .profile-sidebar::after,
+body:not(.night) .about-content::after,
+body:not(.night) .aero-window .aero-statusbar::after,
+body:not(.night) .window-gallery .gallery-body::after,
+body:not(.night) .window-chat .chatbox-body::after {
+  background: var(--night-menu-gradient);
+  opacity: 0;
+}
+
+body.night .aero-window .aero-menubar::before,
+body.night .aero-window .aero-body::before,
+body.night .profile-sidebar::before,
+body.night .about-content::before,
+body.night .aero-window .aero-statusbar::before,
+body.night .window-gallery .gallery-body::before,
+body.night .window-chat .chatbox-body::before {
+  background: var(--day-menu-gradient);
+  opacity: 0;
+}
+
+body.night .aero-window .aero-menubar::after,
+body.night .aero-window .aero-body::after,
+body.night .profile-sidebar::after,
+body.night .about-content::after,
+body.night .aero-window .aero-statusbar::after,
+body.night .window-gallery .gallery-body::after,
+body.night .window-chat .chatbox-body::after {
+  background: var(--night-menu-gradient);
+  opacity: 1;
+}
+
+.aero-window .aero-menubar > *,
+.aero-window .aero-body > *,
+.profile-sidebar > *,
+.about-content > *,
+.aero-window .aero-statusbar > *,
+.window-gallery .gallery-body > *,
+.window-chat .chatbox-body > * {
+  position: relative;
+  z-index: 1;
 }
 
 #theme-toggle {

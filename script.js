@@ -9,10 +9,59 @@ const windows = document.querySelectorAll('.aero-window');
 const windowTriggers = document.querySelectorAll('[data-open-window]');
 
 let highestWindowLayer = 5;
+const maximizedWindowState = new WeakMap();
 
 function bringToFront(appWindow) {
   highestWindowLayer += 1;
   appWindow.style.zIndex = String(highestWindowLayer);
+}
+
+function maximizeWindow(appWindow) {
+  const footer = document.querySelector('footer');
+  const taskbarHeight = footer ? footer.offsetHeight : 48;
+  const currentBounds = appWindow.getBoundingClientRect();
+
+  maximizedWindowState.set(appWindow, {
+    left: appWindow.style.left || `${currentBounds.left}px`,
+    top: appWindow.style.top || `${currentBounds.top}px`,
+    width: appWindow.offsetWidth || currentBounds.width,
+    height: appWindow.offsetHeight || currentBounds.height,
+    position: appWindow.style.position || '',
+    transform: appWindow.style.transform || ''
+  });
+
+  appWindow.classList.add('is-maximized');
+  appWindow.style.position = 'fixed';
+  appWindow.style.left = '5px';
+  appWindow.style.top = '4px';
+  appWindow.style.width = `${window.innerWidth - 10}px`;
+  appWindow.style.height = `${Math.max(window.innerHeight - taskbarHeight - 10, 0)}px`;
+  appWindow.style.transform = 'none';
+  appWindow.setAttribute('data-maximized', 'true');
+}
+
+function restoreWindow(appWindow) {
+  const previousState = maximizedWindowState.get(appWindow);
+  appWindow.classList.remove('is-maximized');
+
+  if (!previousState) return;
+
+  appWindow.style.left = previousState.left;
+  appWindow.style.top = previousState.top;
+  appWindow.style.width = `${previousState.width}px`;
+  appWindow.style.height = `${previousState.height}px`;
+  appWindow.style.position = previousState.position || 'fixed';
+  appWindow.style.transform = previousState.transform || 'none';
+  appWindow.setAttribute('data-maximized', 'false');
+}
+
+function toggleMaximize(appWindow) {
+  if (appWindow.classList.contains('is-maximized')) {
+    restoreWindow(appWindow);
+    return;
+  }
+
+  maximizeWindow(appWindow);
 }
 
 function setTaskbarSelection(windowName, isOpen) {
@@ -56,6 +105,8 @@ windows.forEach((appWindow) => {
 
   appTitlebar.addEventListener('pointerdown', (event) => {
     if (event.target.closest('button')) return;
+    if (appWindow.classList.contains('is-maximized')) return;
+
     const bounds = appWindow.getBoundingClientRect();
     pointerOffsetX = event.clientX - bounds.left;
     pointerOffsetY = event.clientY - bounds.top;
@@ -69,6 +120,8 @@ windows.forEach((appWindow) => {
 
   appTitlebar.addEventListener('pointermove', (event) => {
     if (!appTitlebar.hasPointerCapture(event.pointerId)) return;
+    if (appWindow.classList.contains('is-maximized')) return;
+
     const maxLeft = window.innerWidth - appWindow.offsetWidth;
     const maxTop = window.innerHeight - appWindow.offsetHeight;
     appWindow.style.left = `${Math.min(Math.max(0, event.clientX - pointerOffsetX), Math.max(0, maxLeft))}px`;
@@ -84,7 +137,15 @@ windows.forEach((appWindow) => {
 
   appWindow.querySelectorAll('.min, .close').forEach((button) => {
     button.addEventListener('click', () => {
+      if (button.classList.contains('max')) return;
       hideWindow(appWindow, button.classList.contains('min') ? 'is-minimizing' : 'is-closing');
+    });
+  });
+
+  appWindow.querySelectorAll('.max').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+      toggleMaximize(appWindow);
     });
   });
 });

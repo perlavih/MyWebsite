@@ -16,14 +16,8 @@
   --day-status-gradient: linear-gradient(#f7f9fc, #e4e9f2);
   --day-scroll-track: #f1f1f1;
   --day-scroll-thumb: linear-gradient(to right, #e2effa 0%, #cbdff3 40%, #a2c4e8 50%, #b8d6f4 100%);
-  --day-gallery-surface: linear-gradient(135deg, #f8fbff, #dce8f0);
-  --day-gallery-text: #27445d;
-  --day-gallery-muted: #5c6b77;
+  --day-paint-surface: linear-gradient(135deg, #f8fbff, #dce8f0);
   --day-chat-surface: #edf5fa;
-  --day-chat-header: linear-gradient(#fff, #e1edf4);
-  --day-chat-border: #b4cbd8;
-  --day-chat-received: #fff;
-  --day-chat-sent: #d8effb;
 
   --night-background: #081221;
   --night-window-text: #e3edf6;
@@ -41,7 +35,6 @@
   --night-gallery-text: #d8efff;
   --night-gallery-muted: #a5b9cb;
   --night-chat-surface: #152536;
-
   --background: var(--day-background);
   --window-text: var(--day-window-text);
   --window-muted: var(--day-window-muted);
@@ -54,8 +47,6 @@
   --status-gradient: var(--day-status-gradient);
   --scroll-track: var(--day-scroll-track);
   --scroll-thumb: var(--day-scroll-thumb);
-  --gallery-surface: var(--day-gallery-surface);
-  --gallery-text: var(--day-gallery-text);
-  --gallery-muted: var(--day-gallery-muted);
+  --paint-surface: var(--day-paint-surface);
   --chat-surface: var(--day-chat-surface);
 }
