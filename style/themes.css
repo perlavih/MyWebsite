@@ -86,50 +86,6 @@ body.night .aero-menubar .button:hover {
   transition: opacity .8s ease-in-out;
 }
 
-body:not(.night) .aero-window .aero-menubar::before,
-body:not(.night) .aero-window .aero-body::before,
-body:not(.night) .profile-sidebar::before,
-body:not(.night) .about-content::before,
-body:not(.night) .aero-window .aero-statusbar::before,
-body:not(.night) .window-gallery .gallery-body::before,
-body:not(.night) .window-chat .chatbox-body::before {
-  background: var(--day-menu-gradient);
-  opacity: 1;
-}
-
-body:not(.night) .aero-window .aero-menubar::after,
-body:not(.night) .aero-window .aero-body::after,
-body:not(.night) .profile-sidebar::after,
-body:not(.night) .about-content::after,
-body:not(.night) .aero-window .aero-statusbar::after,
-body:not(.night) .window-gallery .gallery-body::after,
-body:not(.night) .window-chat .chatbox-body::after {
-  background: var(--night-menu-gradient);
-  opacity: 0;
-}
-
-body.night .aero-window .aero-menubar::before,
-body.night .aero-window .aero-body::before,
-body.night .profile-sidebar::before,
-body.night .about-content::before,
-body.night .aero-window .aero-statusbar::before,
-body.night .window-gallery .gallery-body::before,
-body.night .window-chat .chatbox-body::before {
-  background: var(--day-menu-gradient);
-  opacity: 0;
-}
-
-body.night .aero-window .aero-menubar::after,
-body.night .aero-window .aero-body::after,
-body.night .profile-sidebar::after,
-body.night .about-content::after,
-body.night .aero-window .aero-statusbar::after,
-body.night .window-gallery .gallery-body::after,
-body.night .window-chat .chatbox-body::after {
-  background: var(--night-menu-gradient);
-  opacity: 1;
-}
-
 .aero-window .aero-menubar > *,
 .aero-window .aero-body > *,
 .profile-sidebar > *,

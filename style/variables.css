@@ -9,13 +9,13 @@
   --day-window-muted: #555b63;
   --day-glass: hsl(185 65% 52% / .5);
   --day-menu-gradient: linear-gradient(#ffffff 0%, #eef2f9 45%, #dbe3f1 55%, #e9eef8 100%);
-  --day-surface-gradient: linear-gradient(#f7f9fc, #e4e9f2);
+  --day-header-gradient: linear-gradient(180deg, rgba(100, 190, 248, .88) 0%, rgba(50, 150, 225, .92) 100%);
+  --day-home-glass: linear-gradient(145deg, rgba(230, 248, 255, .72) 0%, rgba(161, 217, 246, 0.68) 60%, rgba(179, 240, 224, 0.65) 100%);
   --day-panel: #f0f0f0;
   --day-border: rgba(0, 0, 0, .48);
-  --day-soft-border: #9e9e9e;
+  --day-border-glass: rgba(255, 255, 255, 0.78);
+  --day-shadow-glass: 0 6px 24px rgba(40, 120, 200, .14), 0 1px 4px rgba(40, 120, 200, .08), inset 0 1px 0 rgba(255, 255, 255, .82);
   --day-status-gradient: linear-gradient(#f7f9fc, #e4e9f2);
-  --day-scroll-track: #f1f1f1;
-  --day-scroll-thumb: linear-gradient(to right, #e2effa 0%, #cbdff3 40%, #a2c4e8 50%, #b8d6f4 100%);
   --day-paint-surface: linear-gradient(135deg, #f8fbff, #dce8f0);
   --day-chat-surface: #edf5fa;
 
@@ -27,7 +27,8 @@
   --night-surface-gradient: linear-gradient(#26374a, #142333);
   --night-panel: #172536;
   --night-border: rgba(159, 211, 245, .34);
-  --night-soft-border: #3d5d76;
+  --night-border-glass: rgba(255, 255, 255, 0.6);
+  --night-shadow-glass: 0 6px 24px rgba(40, 120, 200, .14), 0 1px 4px rgba(40, 120, 200, .08), inset 0 1px 0 rgba(255, 255, 255, .82);
   --night-status-gradient: linear-gradient(#26374a, #142333);
   --night-scroll-track: #101d2a;
   --night-scroll-thumb: linear-gradient(to right, #416889, #588cac 50%, #31536f);
@@ -35,18 +36,20 @@
   --night-gallery-text: #d8efff;
   --night-gallery-muted: #a5b9cb;
   --night-chat-surface: #152536;
+  --night-header-gradient: linear-gradient(180deg, rgba(100, 190, 248, .88) 0%, rgba(50, 150, 225, .92) 100%);
+
   --background: var(--day-background);
   --window-text: var(--day-window-text);
   --window-muted: var(--day-window-muted);
   --window-glass: var(--day-glass);
   --menu-gradient: var(--day-menu-gradient);
-  --surface-gradient: var(--day-surface-gradient);
+  --home-glass: var(--day-home-glass);
+  --header-gradient: var(--day-header-gradient);
   --panel-background: var(--day-panel);
   --window-border: var(--day-border);
-  --soft-border: var(--day-soft-border);
+  --border-glass: var(--day-border-glass);
+  --shadow-glass: var(--day-shadow-glass);
   --status-gradient: var(--day-status-gradient);
-  --scroll-track: var(--day-scroll-track);
-  --scroll-thumb: var(--day-scroll-thumb);
   --paint-surface: var(--day-paint-surface);
   --chat-surface: var(--day-chat-surface);
 }
