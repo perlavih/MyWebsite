@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style/variables.css">
     <link rel="stylesheet" href="style/themes.css">
     <link rel="stylesheet" href="style/windowhome.css">
+    <link rel="stylesheet" href="style/windowgallery.css">
     <link rel="stylesheet" href="style/windowpaint.css">
+    <link rel="stylesheet" href="style/windowplayer.css">
     <link rel="stylesheet" href="style/windowschat.css">
     <link rel="stylesheet" href="style/animations.css">
     <link rel="stylesheet" href="style/responsive.css">
@@ -31,8 +33,10 @@
         </div>
         <div class="aero-menubar">
             <button class="button" type="button" data-open-window="home">Home</button>
-            <button class="button" type="button" data-open-window="paint">Paint</button>
+            <button class="button" type="button" data-open-window="gallery">Gallery</button>
             <button class="button" type="button" data-open-window="chat">Chat</button>
+            <button class="button" type="button" data-open-window="paint">Paint</button>
+            <button class="button" type="button" data-open-window="player">Player</button>
             <button class="button2" type="button" aria-label="Translate" title="Translate">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2c0 4-2 7-5 9m2-5c1.5 2 3.5 3.5 6 4M14 19l3-7 3 7m-5-2h4" /></svg>
             </button>
@@ -41,61 +45,113 @@
                 <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.5 8.5 0 1 0 20.5 15.2Z" /></svg>
             </button>
         </div>
-        <div class="home-body">
+
+        <main class="home-body">
+
           <aside class="profile-sidebar" aria-label="Profile information">
+            <div class="maximized-bg"></div>
             <header class="profile-header">
               <h3>My Profile</h3>
             </header>
             <div class="profile-content">
               <div class="profile-photo" aria-label="Profile photo"><img src="assets/icons/aero-pfp-256.png" alt=""></div>
-              <h1>Perla Vih</h1>
-              <p class="profile-pronouns">She/Her</p>
-              <p class="profile-info">A short description or other information.</p>
-              <nav class="social-links" aria-label="Social media">
-                <a class="social-button" aria-label="Discord" href="https://discord.com/users/668624752696623156" target="_blank">
-                  <img src="assets/icons/discord.png" alt="discord">
-                </a>
-                <a class="social-button" aria-label="Youtube" href="#" target="_blank">
-                  <img src="assets/icons/youtube.png" alt="Youtube">
-                </a>
-                <a class="social-button" aria-label="Bluesky" href="#" target="_blank">
-                  <img src="assets/icons/bluesky.png" alt="bluesky">
-                </a>
-                <a class="social-button" aria-label="Instagram" href="#" target="_blank">
-                  <img src="assets/icons/instagram.png" alt="instagram">
-                </a>
-              </nav>
+              <div class="profile-identity">
+                <h1>Perla Vih</h1>
+                <p class="profile-pronouns">She/Her</p>
+              </div>
+              <div class="profile-lower">
+                <p class="profile-info">A short description or other information.</p>
+                <nav class="social-links" aria-label="Social media">
+                  <a class="social-button" aria-label="Discord" href="https://discord.com/users/668624752696623156" target="_blank">
+                    <img src="assets/icons/discord.png" alt="discord">
+                  </a>
+                  <a class="social-button" aria-label="Youtube" href="#" target="_blank">
+                    <img src="assets/icons/youtube.png" alt="Youtube">
+                  </a>
+                  <a class="social-button" aria-label="Bluesky" href="#" target="_blank">
+                    <img src="assets/icons/bluesky.png" alt="bluesky">
+                  </a>
+                  <a class="social-button" aria-label="Instagram" href="#" target="_blank">
+                    <img src="assets/icons/instagram.png" alt="instagram">
+                  </a>
+                </nav>
+              </div>
             </div>
+
           </aside>
 
-          <main class="articles">
-            <header class="articles-header">
-              <h3>Articles</h3>
-            </header>
-            <article>
-              <h2>About me</h2>
-              <p>
-                This is the main area for writing about yourself. It has its own scroll,
-                so longer content will not change the window size.
-              </p>
-            </article>
-          </main>
-        </div>
+          <div class="articles-panel">
+            <div class="articles" aria-label="Articles">
+              <header class="articles-header">
+                <h3>Articles</h3>
+              </header>
+              <article>
+                <h2>About me</h2>
+                <p>
+                  This is the main area for writing about yourself. It has its own scroll,
+                  so longer content will not change the window size.
+                </p>
+              </article>
+            </div>
+
+            <div class="articles" aria-label="Articles">
+              <header class="articles-header">
+                <h3>Articles</h3>
+              </header>
+              <article>
+                <h2>About me</h2>
+                <p>
+                  This is the main area for writing about yourself. It has its own scroll,
+                  so longer content will not change the window size.
+                </p>
+              </article>
+            </div>
+
+            <div class="articles" aria-label="Articles">
+              <header class="articles-header">
+                <h3>Articles</h3>
+              </header>
+              <article>
+                <h2>About me</h2>
+                <p>
+                  This is the main area for writing about yourself. It has its own scroll,
+                  so longer content will not change the window size.
+                </p>
+              </article>
+            </div>
+
+            <div class="articles" aria-label="Articles">
+              <header class="articles-header">
+                <h3>Articles</h3>
+              </header>
+              <article>
+                <h2>About me</h2>
+                <p>
+                  This is the main area for writing about yourself. It has its own scroll,
+                  so longer content will not change the window size.
+                </p>
+              </article>
+            </div>
+          </div>
+        </main>
+
         <div class="aero-statusbar">
           <span id="mode-status">Mode: Day</span>
           <span class="aero-status-grow"></span>
-          <span class="aero-gripper"></span>
+          <button class="websitelink"><a>https://perlavih.neocities.org</a></button>
         </div>
     </div>
 
-    <section class="aero-window window-paint is-hidden" id="window-paint" data-window="paint" aria-label="Paint">
+    <section class="aero-window window-gallery is-hidden" id="window-gallery" data-window="gallery" aria-label="Art Gallery">
       <div class="aero-titlebar">
         <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
-        <span class="aero-titlebar-text">PerlaVih.exe - Paint</span>
+        <span class="aero-titlebar-text">PerlaVih.exe - Art Gallery</span>
         <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
       </div>
-      <main class="paint-body">
-        <iframe src="https://jspaint.app" width="100%"  height="100%" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+      <main class="gallery-body">
+        
+        
+
       </main>
     </section>
 
@@ -110,6 +166,30 @@
       </main>
     </section>
 
+    <section class="aero-window window-paint is-hidden" id="window-paint" data-window="paint" aria-label="Paint">
+      <div class="aero-titlebar">
+        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
+        <span class="aero-titlebar-text">PerlaVih.exe - Paint</span>
+        <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
+      </div>
+      <main class="paint-body">
+        <iframe src="https://jspaint.app" width="100%"  height="100%" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+      </main>
+    </section>
+
+    <section class="aero-window window-player is-hidden" id="window-player" data-window="player" aria-label="Player">
+      <div class="aero-titlebar">
+        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
+        <span class="aero-titlebar-text">PerlaVih.exe - Player</span>
+        <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="close" type="button" aria-label="Close"></button></div>
+      </div>
+      <main class="player-body">
+        
+  
+
+      </main>
+    </section>
+
       <footer>
         <div class="left-side">
           <ul>
@@ -118,14 +198,22 @@
                 <img src="assets/icons/msn avatar icon.ico" alt="Avatar">
               </button>
             </li>
-            <li><button type="button" data-open-window="paint">
-              <img src="assets/icons/mspaint icon.ico" alt="Paint">
+            <li><button type="button" data-open-window="gallery">
+              <img src="assets/icons/mspaint icon.ico" alt="Art Gallery">
             </button>
             </li>
             <li>
               <button type="button" data-open-window="chat">
-                <img src="assets/icons/frutiger aero globe icon.ico" alt="chat">
+                <img src="assets/icons/frutiger aero globe icon.ico" alt="Chat">
               </button>
+            </li>
+            <li><button type="button" data-open-window="paint">
+              <img src="assets/icons/mspaint icon.ico" alt="Paint">
+            </button>
+            </li>
+            <li><button type="button" data-open-window="player">
+              <img src="assets/icons/mspaint icon.ico" alt="Player">
+            </button>
             </li>
           </ul>
         </div>

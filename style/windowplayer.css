@@ -1,0 +1,25 @@
+.aero-window.is-hidden { 
+    display: none;
+}
+
+.window-player {
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    z-index: 3;
+    width: min(280px, calc(100vw - 48px));
+    transform: translate(-50%, -50%);
+}
+
+.window-player .player-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    margin: 0 var(--frame) var(--frame);
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--window-border);
+    border-radius: 0 0 3px 3px;
+    background: var(--menu-gradient);
+  }

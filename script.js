@@ -27,16 +27,20 @@ function maximizeWindow(appWindow) {
     width: appWindow.offsetWidth || currentBounds.width,
     height: appWindow.offsetHeight || currentBounds.height,
     position: appWindow.style.position || '',
-    transform: appWindow.style.transform || ''
+    transform: appWindow.style.transform || '',
+    borderRadius: appWindow.style.borderRadius || ''
   });
 
   appWindow.classList.add('is-maximized');
   appWindow.style.position = 'fixed';
-  appWindow.style.left = '5px';
-  appWindow.style.top = '4px';
-  appWindow.style.width = `${window.innerWidth - 10}px`;
-  appWindow.style.height = `${Math.max(window.innerHeight - taskbarHeight - 10, 0)}px`;
+  appWindow.style.left = '0px';
+  appWindow.style.top = '0px';
+  appWindow.style.width = `${window.innerWidth}px`;
+  appWindow.style.height = `${Math.max(window.innerHeight - taskbarHeight, 0)}px`;
+  appWindow.style.borderRadius = '0';
+  appWindow.style.margin = '0';
   appWindow.style.transform = 'none';
+  appWindow.style.boxShadow = 'none';
   appWindow.setAttribute('data-maximized', 'true');
 }
 
@@ -52,6 +56,9 @@ function restoreWindow(appWindow) {
   appWindow.style.height = `${previousState.height}px`;
   appWindow.style.position = previousState.position || 'fixed';
   appWindow.style.transform = previousState.transform || 'none';
+  appWindow.style.borderRadius = previousState.borderRadius || '';
+  appWindow.style.margin = '';
+  appWindow.style.boxShadow = '';
   appWindow.setAttribute('data-maximized', 'false');
 }
 
@@ -152,12 +159,22 @@ windows.forEach((appWindow) => {
 
 windowTriggers.forEach((trigger) => trigger.addEventListener('click', () => showWindow(trigger.dataset.openWindow)));
 
-themeToggle.addEventListener('click', () => {
-  const isNight = document.body.classList.toggle('night');
-
+function setTheme(isNight) {
+  document.body.classList.toggle('night', isNight);
   modeStatus.textContent = `Mode: ${isNight ? 'Night' : 'Day'}`;
   themeToggle.setAttribute('aria-pressed', String(isNight));
+}
+
+function isNightByLocalTime() {
+  const hour = new Date().getHours();
+  return hour >= 18 || hour < 5;
+}
+
+themeToggle.addEventListener('click', () => {
+  setTheme(!document.body.classList.contains('night'));
 });
+
+setTheme(isNightByLocalTime());
 
 function updateTaskbarClock() {
   const now = new Date();

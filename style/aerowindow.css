@@ -27,10 +27,19 @@
 .aero-window.is-maximized {
   display: flex;
   flex-direction: column;
-  width: calc(100vw - 10px);
+  width: 100vw;
   max-width: none;
-  height: calc(100vh - 48px - 10px);
-  border-radius: 12px 12px 8px 8px;
+  height: calc(100vh - 48px);
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  left: 0;
+  top: 0;
+}
+
+.aero-window.is-maximized::before,
+.aero-window.is-maximized::after {
+  border-radius: 0;
 }
 
 .aero-window::before {
@@ -208,11 +217,22 @@
 .aero-window .aero-menubar {
   position: relative;
   display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 30px;
   margin: 0 var(--frame);
   background: transparent;
   border: 1px solid var(--window-border);
   border-bottom: 0;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.aero-window.is-maximized .aero-menubar {
+  margin: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-radius: 0;
 }
 
 .aero-window .aero-menubar::before,
@@ -250,12 +270,13 @@ body.night .aero-window .aero-menubar::after {
 
 .aero-window .aero-menubar .button {
     align-items: stretch;
-    padding: 4px 10px;
+    padding: 7px 10px;
     cursor: url(../assets/cursors/FrutigerAero_Hover.cur), auto;
     color: var(--window-text);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, system-ui, sans-serif;
     font-size: 12px;
 }
+
 .aero-window .aero-menubar .button:hover {
   background: linear-gradient(#eaf4fd, #cfe8fb);
   box-shadow: inset 0 0 0 1px #b5dcfb;
@@ -339,6 +360,15 @@ body.night .aero-window .aero-menubar::after {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
+.aero-window.is-maximized .aero-statusbar {
+  display: none;
+  margin: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: 0;
+}
+
 .aero-window .aero-statusbar::before,
 .aero-window .aero-statusbar::after {
   content: "";
@@ -371,21 +401,24 @@ body.night .aero-window .aero-statusbar::after {
   position: relative;
   z-index: 1;
 }
+
 .aero-window .aero-statusbar .aero-status-grow {
   flex: 1;
 }
 
-.aero-window .aero-statusbar .aero-gripper {
-  width: 12px;
-  height: 12px;
-  background:
-    radial-gradient(circle 1px at 2px 10px, rgba(0, 0, 0, 0.35) 99%, transparent),
-    radial-gradient(circle 1px at 6px 10px, rgba(0, 0, 0, 0.35) 99%, transparent),
-    radial-gradient(circle 1px at 10px 10px, rgba(0, 0, 0, 0.35) 99%, transparent),
-    radial-gradient(circle 1px at 6px 6px, rgba(0, 0, 0, 0.35) 99%, transparent),
-    radial-gradient(circle 1px at 10px 6px, rgba(0, 0, 0, 0.35) 99%, transparent),
-    radial-gradient(circle 1px at 10px 2px, rgba(0, 0, 0, 0.35) 99%, transparent);
+.aero-window .aero-statusbar .websitelink {
+  color: var(--window-border);
+  padding: 3px;
+  border: 1px solid var(--window-border);
+  border-radius: 7px;
 }
+
+.aero-window .aero-statusbar .websitelink:hover {
+  color: var(--day-panel);
+  border: 1px solid var(--day-panel);
+  background-color: var(--window-border);
+}
+
 
 .aero-window.inactive::before {
   background:

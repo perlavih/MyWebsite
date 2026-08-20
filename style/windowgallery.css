@@ -1,0 +1,43 @@
+.aero-window.is-hidden { 
+    display: none;
+}
+
+.window-gallery {
+    position: fixed;
+    top: calc((100vh - 48px) / 2);
+    left: 50%;
+    z-index: 3;
+    width: min(750px, calc(100vw - 24px));
+    max-height: calc(100vh - 64px);
+    transform: translate(-50%, -50%);
+}
+
+.window-gallery .gallery-body {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 35%) minmax(0, 65%);
+    align-items: stretch;
+    flex: 0 1 auto;
+    min-height: 0;
+    width: auto;
+    height: min(450px, calc(100vh - 110px));
+    margin: 0 var(--frame) var(--frame);
+    padding: 7px;
+    gap: 7px;
+    box-sizing: border-box;
+    color: var(--window-text);
+    background: var(--menu-gradient);
+    border: 1px solid var(--window-border);
+    transition: background .8s ease-in-out, color .8s ease-in-out, border-color .8s ease-in-out, box-shadow .8s ease-in-out;
+    overflow: auto;
+    font-family: 'Frutiger', "Segoe UI", Tahoma, Geneva, Verdana, system-ui, sans-serif;
+}
+
+.aero-window.is-maximized .gallery-body {
+    margin: 0;
+    padding: 0 0 7px 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    height: 100%;
+  }

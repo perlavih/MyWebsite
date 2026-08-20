@@ -9,12 +9,12 @@
   --day-window-muted: #555b63;
   --day-glass: hsl(185 65% 52% / .5);
   --day-menu-gradient: linear-gradient(#ffffff 0%, #eef2f9 45%, #dbe3f1 55%, #e9eef8 100%);
-  --day-header-gradient: linear-gradient(180deg, rgba(100, 190, 248, .88) 0%, rgba(50, 150, 225, .92) 100%);
+  --day-header-gradient: linear-gradient(180deg, rgba(171, 245, 255, 0.88) 0%, rgba(98, 159, 244, 0.92) 100%);
   --day-home-glass: linear-gradient(145deg, rgba(230, 248, 255, .72) 0%, rgba(161, 217, 246, 0.68) 60%, rgba(179, 240, 224, 0.65) 100%);
   --day-panel: #f0f0f0;
   --day-border: rgba(0, 0, 0, .48);
   --day-border-glass: rgba(255, 255, 255, 0.78);
-  --day-shadow-glass: 0 6px 24px rgba(40, 120, 200, .14), 0 1px 4px rgba(40, 120, 200, .08), inset 0 1px 0 rgba(255, 255, 255, .82);
+  --day-shadow-glass: 0 5px 24px rgba(40, 120, 200, .14), 0 1px 4px rgba(40, 120, 200, .08), inset 0 1px 0 rgba(255, 255, 255, .82);
   --day-status-gradient: linear-gradient(#f7f9fc, #e4e9f2);
   --day-paint-surface: linear-gradient(135deg, #f8fbff, #dce8f0);
   --day-chat-surface: #edf5fa;
@@ -25,10 +25,10 @@
   --night-glass: hsl(225 60% 42% / .64);
   --night-menu-gradient: linear-gradient(#26394d 0%, #1a2b40 45%, #132337 55%, #1b2b40 100%);
   --night-surface-gradient: linear-gradient(#26374a, #142333);
+  --night-home-glass: linear-gradient(145deg, rgba(230, 248, 255, 0.208) 0%, rgba(211, 239, 253, 0.15), 60%, rgba(218, 251, 242, 0.316) 100%);
   --night-panel: #172536;
   --night-border: rgba(159, 211, 245, .34);
-  --night-border-glass: rgba(255, 255, 255, 0.6);
-  --night-shadow-glass: 0 6px 24px rgba(40, 120, 200, .14), 0 1px 4px rgba(40, 120, 200, .08), inset 0 1px 0 rgba(255, 255, 255, .82);
+  --night-shadow-glass: 0 5px 24px rgba(40, 120, 200, .14), 0 1px 4px rgba(40, 120, 200, .08), inset 0 1px 0 rgba(255, 255, 255, .82);
   --night-status-gradient: linear-gradient(#26374a, #142333);
   --night-scroll-track: #101d2a;
   --night-scroll-thumb: linear-gradient(to right, #416889, #588cac 50%, #31536f);
@@ -36,7 +36,7 @@
   --night-gallery-text: #d8efff;
   --night-gallery-muted: #a5b9cb;
   --night-chat-surface: #152536;
-  --night-header-gradient: linear-gradient(180deg, rgba(100, 190, 248, .88) 0%, rgba(50, 150, 225, .92) 100%);
+  --night-header-gradient: linear-gradient(180deg, rgba(152, 184, 253, 0.88) 0%, rgba(40, 100, 153, 0.92) 100%);
 
   --background: var(--day-background);
   --window-text: var(--day-window-text);

@@ -23,3 +23,12 @@
   border-radius: 0 0 3px 3px;
   background: var(--day-paint-surface);
 }
+
+.aero-window.is-maximized .paint-body {
+  margin: 0;
+  padding: 0 0 7px 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  height: 100%;
+}

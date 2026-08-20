@@ -81,6 +81,21 @@ body::after {
     filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .48));
 }
 
+::-webkit-scrollbar {
+    width: 7px;
+    behavior: smooth;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--header-gradient);
+    border-radius: 10px;
+    border: var(--border-glass);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--home-glass);
+}
+
 footer {
     position: fixed;
     bottom: 0;

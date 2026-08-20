@@ -7,6 +7,9 @@ body.night {
   --surface-gradient: var(--night-surface-gradient);
   --panel-background: var(--night-panel);
   --window-border: var(--night-border);
+  --border-glass: var(--night-border);
+  --home-glass: var(--night-home-glass);
+  --header-gradient: var(--night-header-gradient);
   --soft-border: var(--night-soft-border);
   --status-gradient: var(--night-status-gradient);
   --scroll-track: var(--night-scroll-track);

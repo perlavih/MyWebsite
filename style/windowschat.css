@@ -1,12 +1,12 @@
 .window-chat {
   position: fixed;
-  top: calc(20% - 70px);
+  top: 5%;
   right: 5%;
   z-index: 4;
   display: flex;
   flex-direction: column;
-  width: min(310px, calc(100vw - 40px));
-  height: min(640px, calc(100vh - 125px));
+  width: min(270px, calc(100vw - 40px));
+  height: min(400px, calc(100vh - 125px));
 }
 
 .window-chat .chatbox-body {
