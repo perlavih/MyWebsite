@@ -7,6 +7,8 @@ const taskbarDate = document.querySelector('#taskbar-date');
 const taskbarApps = document.querySelectorAll('.left-side ul li button');
 const windows = document.querySelectorAll('.aero-window');
 const windowTriggers = document.querySelectorAll('[data-open-window]');
+const gallery = document.querySelector('.window-gallery .gallery');
+const galleryFilters = document.querySelectorAll('.window-gallery [data-filter]');
 
 let highestWindowLayer = 5;
 const maximizedWindowState = new WeakMap();
@@ -142,7 +144,7 @@ windows.forEach((appWindow) => {
   appTitlebar.addEventListener('pointerup', stopDragging);
   appTitlebar.addEventListener('pointercancel', stopDragging);
 
-  appWindow.querySelectorAll('.min, .close').forEach((button) => {
+  appWindow.querySelectorAll('.min, .aero-titlebar .close').forEach((button) => {
     button.addEventListener('click', () => {
       if (button.classList.contains('max')) return;
       hideWindow(appWindow, button.classList.contains('min') ? 'is-minimizing' : 'is-closing');
@@ -158,6 +160,25 @@ windows.forEach((appWindow) => {
 });
 
 windowTriggers.forEach((trigger) => trigger.addEventListener('click', () => showWindow(trigger.dataset.openWindow)));
+
+galleryFilters.forEach((filterButton) => {
+  filterButton.addEventListener('click', () => {
+    const selectedFilter = filterButton.dataset.filter;
+
+    galleryFilters.forEach((button) => {
+      const isSelected = button === filterButton;
+      button.classList.toggle('is-selected', isSelected);
+      button.setAttribute('aria-pressed', String(isSelected));
+    });
+
+    if (!gallery) return;
+
+    gallery.querySelectorAll('[data-category]').forEach((item) => {
+      const categories = item.dataset.category.split(/\s+/);
+      item.hidden = selectedFilter !== 'all' && !categories.includes(selectedFilter);
+    });
+  });
+});
 
 function setTheme(isNight) {
   document.body.classList.toggle('night', isNight);

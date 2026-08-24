@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="style/windowschat.css">
     <link rel="stylesheet" href="style/animations.css">
     <link rel="stylesheet" href="style/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
   <div class="recycle-bin">
@@ -51,16 +54,18 @@
           <aside class="profile-sidebar" aria-label="Profile information">
             <div class="maximized-bg"></div>
             <header class="profile-header">
-              <h3>My Profile</h3>
+              <h3><img src="assets/icons/heart.gif" alt="">My Profile</h3>
             </header>
             <div class="profile-content">
               <div class="profile-photo" aria-label="Profile photo"><img src="assets/icons/aero-pfp-256.png" alt=""></div>
               <div class="profile-identity">
-                <h1>Perla Vih</h1>
-                <p class="profile-pronouns">She/Her</p>
+                <h1>Perla Vih</h1><p class="img-name">
+                  <img src="https://text.glitter-graphics.net/sblue/p.gif" border=0><img src="https://text.glitter-graphics.net/sblue/e.gif" border=0><img src="https://text.glitter-graphics.net/sblue/r.gif" border=0><img src="https://text.glitter-graphics.net/sblue/l.gif" border=0><img src="https://text.glitter-graphics.net/sblue/a.gif" border=0><img src="https://text.glitter-graphics.net/sblue/v.gif" border=0><img src="https://text.glitter-graphics.net/sblue/i.gif" border=0><img src="https://text.glitter-graphics.net/sblue/h.gif" border=0>
+                </p>
               </div>
               <div class="profile-lower">
-                <p class="profile-info">A short description or other information.</p>
+                <p class="profile-pronouns"><img src="assets/icons/wing1.gif"> She/Her <img src="assets/icons/wing2.gif"></p>
+                <p class="profile-info">19y | Brazilian | Artist | Student | Web & GFX Designer | <img src="assets/icons/demisexual.png"</p>
                 <nav class="social-links" aria-label="Social media">
                   <a class="social-button" aria-label="Discord" href="https://discord.com/users/668624752696623156" target="_blank">
                     <img src="assets/icons/discord.png" alt="discord">
@@ -83,10 +88,23 @@
           <div class="articles-panel">
             <div class="articles" aria-label="Articles">
               <header class="articles-header">
-                <h3>Articles</h3>
+                <h3><img src="assets/icons/hearts.gif" alt="">Welcome to my website!</h3>
               </header>
               <article>
-                <h2>About me</h2>
+                <p>
+                  <img class="pngbanner" src="assets/img/welcome.gif" alt="WELCOME!">
+                  This is the main area for writing about yourself. It has its own scroll,
+                  so longer content will not change the window size.
+                </p>
+              </article>
+            </div>
+
+            <div class="articles" aria-label="Articles">
+              <header class="articles-header">
+                <h3><img src="assets/icons/heart2.gif" alt="">About me</h3>
+              </header>
+              <article>
+                <img class="banner" src="assets/img/banner1.gif" alt="">
                 <p>
                   This is the main area for writing about yourself. It has its own scroll,
                   so longer content will not change the window size.
@@ -113,23 +131,7 @@
               </header>
               <article>
                 <h2>About me</h2>
-                <p>
-                  This is the main area for writing about yourself. It has its own scroll,
-                  so longer content will not change the window size.
-                </p>
-              </article>
-            </div>
-
-            <div class="articles" aria-label="Articles">
-              <header class="articles-header">
-                <h3>Articles</h3>
-              </header>
-              <article>
-                <h2>About me</h2>
-                <p>
-                  This is the main area for writing about yourself. It has its own scroll,
-                  so longer content will not change the window size.
-                </p>
+                
               </article>
             </div>
           </div>
@@ -149,9 +151,31 @@
         <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
       </div>
       <main class="gallery-body">
-        
-        
 
+        <aside class="menu">
+          <div class="header"><p><img src="assets/icons/stars.gif">Menu</p></div>
+          <div class="menu-content">
+            <div class="text">
+              <p>Welcome to the Art gallery! This place is my Portfolio where I post all my arts and in "Fanarts" you can find others people arts too!</p>
+            </div>
+            <ul class="filter">
+              <li><button class="frutiger-aero-button medium is-selected" type="button" data-filter="all" aria-pressed="true">All arts</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="traditional" aria-pressed="false">Traditional art</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="digital" aria-pressed="false">Digital art</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="gfx" aria-pressed="false">GFX designs</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="fanart" aria-pressed="false">Fanarts</button></li>
+            </ul>
+          </div>
+        </aside>
+        <div class="gallery">
+
+        </div>
+        <div class="lightbox">
+          <button class="close">&times;</button>
+          <button class="prev">&#8249;</button>
+          <img src="" alt="lightbox image" />
+          <button class="next">&#8250;</button>
+        </div>
       </main>
     </section>
 
@@ -184,9 +208,42 @@
         <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="close" type="button" aria-label="Close"></button></div>
       </div>
       <main class="player-body">
-        
-  
+        <div id="miniplay">
 
+          <div class="stats">
+            <div class="track-art"></div>
+            <div class="now-playing">PLAYING x OF y</div>
+            <div style="display:flex;flex-direction:column;padding:10px 0 10px 10px;">
+              <div class="track-name">Track Name</div>
+              <div style="font-size:8pt;color:grey;" class="track-artist">Track Artist</div>
+            </div>
+          </div>
+      
+          <div class="slider_container">
+            <div class="current-time">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration">00:00</div>
+          </div>
+      
+          <div class="bttn">
+            <div class="prev-track" onclick="prevTrack()">
+              <?xml version="1.0" ?><svg height="28" viewBox="0 0 512 512" width="28" xmlns="http://www.w3.org/2000/svg">
+                <title />
+                <path d="M30.71,229.47l188.87-113a30.54,30.54,0,0,1,31.09-.39,33.74,33.74,0,0,1,16.76,29.47V224.6L448.15,116.44a30.54,30.54,0,0,1,31.09-.39A33.74,33.74,0,0,1,496,145.52v221A33.73,33.73,0,0,1,479.24,396a30.54,30.54,0,0,1-31.09-.39L267.43,287.4v79.08A33.73,33.73,0,0,1,250.67,396a30.54,30.54,0,0,1-31.09-.39l-188.87-113a31.27,31.27,0,0,1,0-53Z" />
+              </svg>
+            </div>
+            <div class="playpause-track" onclick="playpauseTrack()">
+              <i class="fa fa-play fa-lg"></i>
+            </div>
+            <div class="next-track" onclick="nextTrack()">
+              <?xml version="1.0" ?><svg height="28" viewBox="0 0 512 512" width="28" xmlns="http://www.w3.org/2000/svg">
+                <title />
+                <path d="M481.29,229.47l-188.87-113a30.54,30.54,0,0,0-31.09-.39,33.74,33.74,0,0,0-16.76,29.47V224.6L63.85,116.44a30.54,30.54,0,0,0-31.09-.39A33.74,33.74,0,0,0,16,145.52v221A33.74,33.74,0,0,0,32.76,396a30.54,30.54,0,0,0,31.09-.39L244.57,287.4v79.08A33.74,33.74,0,0,0,261.33,396a30.54,30.54,0,0,0,31.09-.39l188.87-113a31.27,31.27,0,0,0,0-53Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        </div>
       </main>
     </section>
 
@@ -229,6 +286,8 @@
           <button id="bar"></button>
         </div>
       </footer>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/lightbox.js"></script>
 </body>
 </html>
