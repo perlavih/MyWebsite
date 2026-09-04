@@ -3,13 +3,29 @@
     src: url(../assets/fonts/Frutiger.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://files.catbox.moe/qgjjre.woff") format("woff");
+  src: url("https://files.catbox.moe/8fwbkl.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("https://files.catbox.moe/z7csle.woff") format("woff");
+  src: url("https://files.catbox.moe/moqhx6.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
   --day-background: #8fc3df;
   --day-window-text: #1b1b1b;
   --day-window-muted: #555b63;
   --day-glass: hsl(185 65% 52% / .5);
   --day-menu-gradient: linear-gradient(#ffffff 0%, #eef2f9 45%, #dbe3f1 55%, #e9eef8 100%);
-  --day-header-gradient: linear-gradient(180deg, rgba(171, 245, 255, 0.88) 0%, rgba(98, 159, 244, 0.92) 100%);
+  --day-header-gradient: linear-gradient(180deg, rgba(131, 247, 255, 0.951) 0%, rgba(60, 143, 237, 0.92) 100%);
   --day-home-glass: linear-gradient(145deg, rgba(230, 248, 255, .72) 0%, rgba(161, 217, 246, 0.68) 60%, rgba(179, 240, 224, 0.65) 100%);
   --day-panel: #f0f0f0;
   --day-border: rgba(0, 0, 0, .48);
@@ -52,4 +68,18 @@
   --status-gradient: var(--day-status-gradient);
   --paint-surface: var(--day-paint-surface);
   --chat-surface: var(--day-chat-surface);
+  --titlebar-gradient: linear-gradient(90deg, #6a1535, #b23965, #f9a5b9);
+  --dialog-blue: #6a1535;
+  --dialog-accent: white; /* color of text on diaglog blue */
+  --titlebar-color: white; /* reccomended to change so its easy to read on titlebar color */
+  --player-image: url(https://loveberry.nekoweb.org/assets/images/mp/yuzuha.png);
+  --surface: #c0c0c0;
+  --button-highlight: #ffffff;
+  --button-face: #dfdfdf;
+  --button-shadow: #808080;
+  --light-button-shadow: #a9a9a9;
+  --window-frame: #0a0a0a;
+  --border-field: inset -1px -1px var(--button-highlight),
+  inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
+  inset 2px 2px var(--window-frame);
 }

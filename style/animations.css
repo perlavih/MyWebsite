@@ -48,6 +48,11 @@ body.bg-ready.night::after {
   to { opacity: 0; scale: .88; translate: 0 28px; }
 }
 
+@keyframes slide {
+  0% { background-position-x: 0%; }
+  100% { background-position-x: 200vw; }
+  }
+
 .aero-window.is-opening {
   animation: aero-window-open 220ms cubic-bezier(.2, .8, .2, 1) both;
 }

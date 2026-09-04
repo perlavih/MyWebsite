@@ -1,154 +1,151 @@
+// DEFINE YOUR SONGS HERE
+let track_list = [
+      {
+          name:"One Shot One Kill",
+          artist:"The Cat's Whiskers",
+          path:"https://files.catbox.moe/fegzmf.mp3"
+      },
+      {
+          name:"Shooting Arrows",
+          artist:"The Cat's Whiskers",
+          path:"https://files.catbox.moe/zj81lr.mp3"
+      },
+      {
+          name:"4 REAL",
+          artist:"The Cat's Whiskers",
+          path:"https://files.catbox.moe/fxd8fo.mp3"
+      },
+      {
+          name:"My Sweetest Love",
+          artist:"The Cat's Whiskers ft. Kazuma Mitchell",
+          path:"https://files.catbox.moe/qe4he5.mp3"
+      },
+      {
+          name:"Mercy On Me",
+          artist:"The Cat's Whiskers",
+          path:"https://files.catbox.moe/w7nnf9.mp3"
+      }
+  ];
+  
+// THATS ALL TY :3
+
 let now_playing = document.querySelector(".now-playing");
-let track_art = document.querySelector(".track-art");
-let track_name = document.querySelector(".track-name");
-let track_artist = document.querySelector(".track-artist");
+let track_select = document.querySelector(".track-select");
 let playpause_btn = document.querySelector(".playpause-track");
-let next_btn = document.querySelector(".next-track");
-let prev_btn = document.querySelector(".prev-track");
 let seek_slider = document.querySelector(".seek_slider");
-let volume_slider = document.querySelector(".volume_slider");
 let curr_time = document.querySelector(".current-time");
 let total_duration = document.querySelector(".total-duration");
-// Specify globally used values
+
 let track_index = 0;
 let isPlaying = false;
 let updateTimer;
-// Create the audio element for the player
-let curr_track = document.createElement("audio");
-// Define the list of tracks that have to be played
-let track_list = [
-	{
-		name: "Season of Memories",
-		artist: "GFRIEND - Season of Memories",
-		image:
-			"https://64.media.tumblr.com/257022417e60949df9482eafb52e5ace/823f4dd47674e5f7-3d/s2048x3072/6d11aa3c11b135bccaf8f4ccd42a6abdcfced8cc.jpg",
-		path: "https://files.catbox.moe/vc4p9o.mp3"
-	},
-	{
-		name: "HIGH",
-		artist: "Seori - HIGH",
-		image:
-			"https://64.media.tumblr.com/1c56b4b76b0736f0833a4e43d174ed66/823f4dd47674e5f7-b5/s2048x3072/4f2138ddeb3a4aa98887b8b55aa27fcda7fc3969.jpg",
-		path: "https://files.catbox.moe/ddh7c5.mp3"
-	}
-];
-//
-//
-function loadTrack(track_index) {
-	// Clear the previous seek timer
-	clearInterval(updateTimer);
-	resetValues();
-	// Load a new track
-	curr_track.src = track_list[track_index].path;
-	curr_track.load();
-	// Update details of the track
-	track_art.style.backgroundImage = "url(" + track_list[track_index].image + ")";
-	track_name.textContent = track_list[track_index].name;
-	track_artist.textContent = track_list[track_index].artist;
-	now_playing.textContent =
-		"PLAYING " + (track_index + 1) + " OF " + track_list.length;
-	// Set an interval of 1000 milliseconds
-	// for updating the seek slider
-	updateTimer = setInterval(seekUpdate, 1000);
-	// Move to the next track if the current finishes playing
-	// using the 'ended' event
-	curr_track.addEventListener("ended", nextTrack);
-	// Apply a random background color
-	random_bg_color();
+
+let curr_track = document.getElementById("music");
+
+function populateDropdown() {
+  if (!track_select) return;
+  track_select.innerHTML = "";
+  track_list.forEach((track, index) => {
+    const option = document.createElement("option");
+    option.value = index;
+    option.textContent = `${track.name} — ${track.artist}`;
+    track_select.appendChild(option);
+  });
+  track_select.value = track_index;
 }
-// Function to reset all values to their default
+
+function loadTrack(track_index) {
+  clearInterval(updateTimer);
+  resetValues();
+
+  curr_track.src = track_list[track_index].path;
+  curr_track.load();
+
+  if (now_playing) now_playing.textContent = (track_index + 1) + " / " + track_list.length;
+
+  updateTimer = setInterval(seekUpdate, 1000);
+  curr_track.addEventListener("ended", nextTrack);
+
+  if (track_select) track_select.value = track_index;
+}
+
 function resetValues() {
-	curr_time.textContent = "00:00";
-	total_duration.textContent = "00:00";
-	seek_slider.value = 0;
+  curr_time.textContent = "0:00";
+  total_duration.textContent = "0:00";
+  seek_slider.value = 0;
+}
+
+if (track_select) {
+  track_select.addEventListener("change", function() {
+    track_index = parseInt(this.value);
+    loadTrack(track_index);
+    playTrack();
+  });
 }
 
 function playpauseTrack() {
-	// Switch between playing and pausing
-	// depending on the current state
-	if (!isPlaying) playTrack();
-	else pauseTrack();
+  if (!isPlaying) playTrack();
+  else pauseTrack();
 }
 
 function playTrack() {
-	// Play the loaded track
-	curr_track.play();
-	isPlaying = true;
-	// Replace icon with the pause icon
-	playpause_btn.innerHTML = '<i class="fa fa-pause fa-lg"></i>';
+  curr_track.play();
+  isPlaying = true;
+  playpause_btn.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round"
+    class="lucide lucide-pause-icon"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`;
 }
 
 function pauseTrack() {
-	// Pause the loaded track
-	curr_track.pause();
-	isPlaying = false;
-	// Replace icon with the play icon
-	playpause_btn.innerHTML = '<i class="fa fa-play fa-lg"></i>';
+  curr_track.pause();
+  isPlaying = false;
+  playpause_btn.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+    viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round"
+    class="lucide lucide-play-icon"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003
+    3.458l-12 7A2 2 0 0 1 5 19z"/></svg>`;
 }
 
 function nextTrack() {
-	// Go back to the first track if the
-	// current one is the last in the track list
-	if (track_index < track_list.length - 1) track_index += 1;
-	else track_index = 0;
-	// Load and play the new track
-	loadTrack(track_index);
-	playTrack();
+  if (track_index < track_list.length - 1) track_index += 1;
+  else track_index = 0;
+  loadTrack(track_index);
+  playTrack();
 }
 
 function prevTrack() {
-	// Go back to the last track if the
-	// current one is the first in the track list
-	if (track_index > 0) track_index -= 1;
-	else track_index = track_list.length - 1;
-	// Load and play the new track
-	loadTrack(track_index);
-	playTrack();
+  if (track_index > 0) track_index -= 1;
+  else track_index = track_list.length - 1;
+  loadTrack(track_index);
+  playTrack();
 }
 
 function seekTo() {
-	// Calculate the seek position by the
-	// percentage of the seek slider
-	// and get the relative duration to the track
-	seekto = curr_track.duration * (seek_slider.value / 100);
-	// Set the current track position to the calculated seek position
-	curr_track.currentTime = seekto;
-}
-
-function setVolume() {
-	// Set the volume according to the
-	// percentage of the volume slider set
-	curr_track.volume = volume_slider.value / 100;
+  seekto = curr_track.duration * (seek_slider.value / 100);
+  curr_track.currentTime = seekto;
 }
 
 function seekUpdate() {
-	let seekPosition = 0;
-	// Check if the current track duration is a legible number
-	if (!isNaN(curr_track.duration)) {
-		seekPosition = curr_track.currentTime * (100 / curr_track.duration);
-		seek_slider.value = seekPosition;
-		// Calculate the time left and the total duration
-		let currentMinutes = Math.floor(curr_track.currentTime / 60);
-		let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
-		let durationMinutes = Math.floor(curr_track.duration / 60);
-		let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
-		// Add a zero to the single digit time values
-		if (currentSeconds < 10) {
-			currentSeconds = "0" + currentSeconds;
-		}
-		if (durationSeconds < 10) {
-			durationSeconds = "0" + durationSeconds;
-		}
-		if (currentMinutes < 10) {
-			currentMinutes = "0" + currentMinutes;
-		}
-		if (durationMinutes < 10) {
-			durationMinutes = "0" + durationMinutes;
-		}
-		// Display the updated duration
-		curr_time.textContent = currentMinutes + ":" + currentSeconds;
-		total_duration.textContent = durationMinutes + ":" + durationSeconds;
-	}
+  let seekPosition = 0;
+  if (!isNaN(curr_track.duration)) {
+    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+    seek_slider.value = seekPosition;
+
+    let currentMinutes = Math.floor(curr_track.currentTime / 60);
+    let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
+    let durationMinutes = Math.floor(curr_track.duration / 60);
+    let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
+
+    if (currentSeconds < 10) currentSeconds = "0" + currentSeconds;
+    if (durationSeconds < 10) durationSeconds = "0" + durationSeconds;
+
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+  }
 }
-// Load the first track in the tracklist
+
+populateDropdown();
 loadTrack(track_index);

@@ -4,6 +4,8 @@ const lightboxImage = lightbox.querySelector("img");
 const closeBtn = lightbox.querySelector(".close");
 const prevBtn = lightbox.querySelector(".prev");
 const nextBtn = lightbox.querySelector(".next");
+const gallery = document.querySelector('.window-gallery .gallery');
+const galleryFilters = document.querySelectorAll('.window-gallery [data-filter]');
 
 let currentIndex = 0;
 const images = Array.from(lightboxGallery.querySelectorAll("img"));
@@ -46,4 +48,23 @@ lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
     lightbox.classList.remove("is-open");
   }
+});
+
+galleryFilters.forEach((filterButton) => {
+  filterButton.addEventListener('click', () => {
+    const selectedFilter = filterButton.dataset.filter;
+
+    galleryFilters.forEach((button) => {
+      const isSelected = button === filterButton;
+      button.classList.toggle('is-selected', isSelected);
+      button.setAttribute('aria-pressed', String(isSelected));
+    });
+
+    if (!gallery) return;
+
+    gallery.querySelectorAll('[data-category]').forEach((item) => {
+      const categories = item.dataset.category.split(/\s+/);
+      item.hidden = selectedFilter !== 'all' && !categories.includes(selectedFilter);
+    });
+  });
 });

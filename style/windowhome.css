@@ -99,6 +99,7 @@ body.night .aero-window .home-body::after {
 }
 
 .profile-header {
+  flex: 0 0 auto;
   padding: 5px 12px;
   width: 100%;
   border-radius: 10px 10px 0 0;
@@ -147,10 +148,18 @@ body.night .aero-window .home-body::after {
 }
 
 .profile-sidebar h1 {
+  font-family: "Choping Script";
   font-size: 24px;
   line-height: 1.1;
   text-align: center;
-  margin-bottom: 7px;
+  background-size: 100vw 100vw;
+  position: relative;
+  text-align: -webkit-center;
+  font-size: 2em;
+  background: repeating-linear-gradient(-45deg, rgba(60, 143, 237, 0.92) 0%, rgba(131, 203, 255, 0.951) 25%, rgba(60, 143, 237, 0.92) 50%);
+  -webkit-animation: 'slide' 30s infinite linear forwards;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .profile-sidebar p.img-name {
@@ -168,9 +177,24 @@ body.night .aero-window .home-body::after {
   width: 12px;
 }
 
+#status-blob {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+#status-details {
+  margin: 0;
+  padding-right: 5px;
+}
+
+.status {
+  display: flex;
+  flex-direction: row;
+}
+
 .profile-info {
   font-size: 10px;
-  line-height: 1.25;
   text-align: center;
   color: var(--window-muted);
 }
@@ -404,7 +428,7 @@ body.night .aero-window.is-maximized .maximized-bg {
   justify-content: space-between;
   gap: 5px;
   padding-top: 5px;
-  transform: translateY(-23px);
+  transform: translateY(-20px);
 }
 
 .aero-window.is-maximized .profile-info {

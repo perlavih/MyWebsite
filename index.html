@@ -65,7 +65,11 @@
               </div>
               <div class="profile-lower">
                 <p class="profile-pronouns"><img src="assets/icons/wing1.gif"> She/Her <img src="assets/icons/wing2.gif"></p>
-                <p class="profile-info">19y | Brazilian | Artist | Student | Web & GFX Designer | <img src="assets/icons/demisexual.png"</p>
+                <p class="profile-info">19y | Brazilian | Artist | Student | Web & GFX Designer</p>
+                <div class="status">
+                  <p id="status-details">loading...</p>
+                  <div id="status-blob"></div>
+                </div>
                 <nav class="social-links" aria-label="Social media">
                   <a class="social-button" aria-label="Discord" href="https://discord.com/users/668624752696623156" target="_blank">
                     <img src="assets/icons/discord.png" alt="discord">
@@ -168,6 +172,7 @@
           </div>
         </aside>
         <div class="gallery">
+          <iframe src="http://www.kao-ani.com/goodies/clock_1.php" width="88" height="31" scrolling="no" frameborder="no" allowtransparency="true" border="0" framespacing="0"></iframe>
 
         </div>
         <div class="lightbox">
@@ -208,42 +213,43 @@
         <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="close" type="button" aria-label="Close"></button></div>
       </div>
       <main class="player-body">
-        <div id="miniplay">
-
-          <div class="stats">
-            <div class="track-art"></div>
-            <div class="now-playing">PLAYING x OF y</div>
-            <div style="display:flex;flex-direction:column;padding:10px 0 10px 10px;">
-              <div class="track-name">Track Name</div>
-              <div style="font-size:8pt;color:grey;" class="track-artist">Track Artist</div>
+        <div id="musicplayer">   
+          <div class="player-flex">
+              <div class="player-icon-holder">
+              <div class="player-icon"></div>
+              </div>
+              <div class="player-main">
+                   
+          <select class="track-select"></select>
+        <div class="controls">
+            <div class="seeking">
+                <div class="current-time">00:00</div>
+  
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+  
+                <div class="total-duration">0:00</div>
             </div>
-          </div>
-      
-          <div class="slider_container">
-            <div class="current-time">00:00</div>
-            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-            <div class="total-duration">00:00</div>
-          </div>
-      
-          <div class="bttn">
-            <div class="prev-track" onclick="prevTrack()">
-              <?xml version="1.0" ?><svg height="28" viewBox="0 0 512 512" width="28" xmlns="http://www.w3.org/2000/svg">
-                <title />
-                <path d="M30.71,229.47l188.87-113a30.54,30.54,0,0,1,31.09-.39,33.74,33.74,0,0,1,16.76,29.47V224.6L448.15,116.44a30.54,30.54,0,0,1,31.09-.39A33.74,33.74,0,0,1,496,145.52v221A33.73,33.73,0,0,1,479.24,396a30.54,30.54,0,0,1-31.09-.39L267.43,287.4v79.08A33.73,33.73,0,0,1,250.67,396a30.54,30.54,0,0,1-31.09-.39l-188.87-113a31.27,31.27,0,0,1,0-53Z" />
-              </svg>
+  
+            <div class="player-buttons">
+                <button class="window-button prev-track" onclick="prevTrack()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-back-icon lucide-skip-back"><path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z"/><path d="M3 20V4"/></svg>
+                </button>
+  
+                <button class="window-button playpause-track" onclick="playpauseTrack()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                </button>
+  
+                <button class="window-button next-track" onclick="nextTrack()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-forward-icon lucide-skip-forward"><path d="M21 4v16"/><path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z"/></svg>
+                </button>
             </div>
-            <div class="playpause-track" onclick="playpauseTrack()">
-              <i class="fa fa-play fa-lg"></i>
-            </div>
-            <div class="next-track" onclick="nextTrack()">
-              <?xml version="1.0" ?><svg height="28" viewBox="0 0 512 512" width="28" xmlns="http://www.w3.org/2000/svg">
-                <title />
-                <path d="M481.29,229.47l-188.87-113a30.54,30.54,0,0,0-31.09-.39,33.74,33.74,0,0,0-16.76,29.47V224.6L63.85,116.44a30.54,30.54,0,0,0-31.09-.39A33.74,33.74,0,0,0,16,145.52v221A33.74,33.74,0,0,0,32.76,396a30.54,30.54,0,0,0,31.09-.39L244.57,287.4v79.08A33.74,33.74,0,0,0,261.33,396a30.54,30.54,0,0,0,31.09-.39l188.87-113a31.27,31.27,0,0,0,0-53Z" />
-              </svg>
-            </div>
-          </div>
         </div>
-        </div>
+  
+              </div>
+          </div>
+  
+        <audio id="music" src=""></audio>
+    </div>
       </main>
     </section>
 
@@ -289,5 +295,7 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/player.js"></script>
     <script src="scripts/lightbox.js"></script>
+    <script src="scripts/discord.js"></script>
+    <script src="scripts/theme.js"></script>
 </body>
 </html>
