@@ -1,4 +1,5 @@
 body.night {
+  --bold: var(--night-bold);
   --background: var(--night-background);
   --window-text: var(--night-window-text);
   --window-muted: var(--night-window-muted);

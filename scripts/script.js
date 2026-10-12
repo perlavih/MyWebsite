@@ -6,6 +6,14 @@ const taskbarApps = document.querySelectorAll('.left-side ul li button');
 const windows = document.querySelectorAll('.aero-window');
 const windowTriggers = document.querySelectorAll('[data-open-window]');
 
+window.addEventListener("load", (event) => {
+  new cursoreffects.bubbleCursor({
+  spawnInterval: 100,
+  fillColor: "rgba(97, 170, 212, 0.21)",
+  strokeColor: "rgba(58, 146, 197, 0.65)",
+});
+});
+
 let highestWindowLayer = 5;
 const maximizedWindowState = new WeakMap();
 

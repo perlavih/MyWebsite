@@ -25,6 +25,20 @@ ul {
     list-style: none;
 }
 
+hr {
+    border: 0;
+    height: 2px;
+    border-radius: 2px;
+    width: 100%;
+    background: var(--border-glass);
+    margin: 7px 0;
+}
+
+b {
+    color: var(--bold);
+    font-weight: bold;
+}
+
 body {
     min-height: 100vh;
     position: relative;
@@ -58,7 +72,7 @@ body::after {
 
 .recycle-bin {
     position: fixed;
-    z-index: 1;
+    z-index: 0;
     top: 16px;
     left: 3px;
     display: grid;
@@ -79,6 +93,30 @@ body::after {
     margin-bottom: 3px;
     object-fit: contain;
     filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, .48));
+}
+
+.bubblecat {
+  position: absolute;
+  top: 20%;
+  left: 7%;
+  max-width: 150px;
+  z-index: 0;
+  pointer-events: none;
+  scale: -1 1;
+  animation: floating2 3s infinite ease-in-out;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
+}
+
+.bubblepuppy {
+  position: absolute;
+  bottom: 20%;
+  right: 7%;
+  max-width: 150px;
+  z-index: 0;
+  pointer-events: none;
+  scale: -1 1;
+  animation: floating 3s infinite ease-in-out;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
 }
 
 ::-webkit-scrollbar {
@@ -162,6 +200,12 @@ footer::before {
     transform: translateY(-1px);
 }
 
+footer .left-side button img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
 .left-side ul li button.is-selected {
     align-self: stretch;
     width: 54px;
@@ -183,6 +227,100 @@ footer::before {
   align-items: center;
   height: 100%;
   margin-left: auto;
+}
+
+.credits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    height: 100%;
+    padding: 0 7px;
+    font: 11px/1.22 "Segoe UI", sans-serif;
+    color: #fff;
+    text-shadow: 0 1px 1px #294862;
+}
+
+.credit {
+    font: inherit;
+    color: inherit;
+    text-shadow: inherit;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.credit-group {
+    position: relative;
+}
+
+.credits-balloon {
+    position: absolute;
+    bottom: calc(100% + 16px);
+    left: -12px;
+    width: min(200px, calc(100vw - 24px));
+    border: 1px solid var(--window-border);
+    border-radius: 7px;
+    background: var(--menu-gradient);
+    color: var(--window-text);
+    box-shadow: var(--shadow-glass), 0 4px 12px rgba(0, 0, 0, .3);
+    font: 13px/1.4 'Frutiger', "Segoe UI", sans-serif;
+    text-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    line-height: 1.2;
+    transform: translateY(4px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s ease;
+    z-index: 1;
+}
+
+.credits-balloon::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    background: var(--panel-background);
+    border-right: 1px solid var(--window-border);
+    border-bottom: 1px solid var(--window-border);
+    transform: translateY(-6px) rotate(45deg);
+}
+
+.credits-balloon::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 18px;
+}
+
+.credits-balloon-title {
+    padding: 7px 12px;
+    border-radius: 6px 6px 0 0;
+    background: var(--header-gradient);
+    border-bottom: 1px solid var(--border-glass);
+    font-weight: bold;
+}
+
+.credits-balloon-body {
+    padding: 12px;
+}
+
+.credits-balloon-body p + p {
+    margin-top: 7px;
+}
+
+.credits-balloon a {
+    text-decoration: underline;
+}
+
+.credit-group:hover .credits-balloon,
+.credit-group:focus-within .credits-balloon {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 #bar-icons ul {
@@ -269,9 +407,10 @@ footer::before {
 
   /* Typography */
   color: var(--fg);
-  font-family: "Segoe UI", Tahoma, "Segoe UI Web", system-ui, sans-serif;
-  font-weight: 700;
-  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  font-family: 'Daydream', "Segoe UI", Tahoma, "Segoe UI Web", system-ui, sans-serif;
+  font-size: 11px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.562) 0 1px 5px;
 
   /* Layout */
   cursor: url(../assets/cursors/FrutigerAero_Person_Select.cur);
@@ -317,15 +456,13 @@ footer::before {
 /* Selected State */
 .frutiger-aero-button.is-selected {
   --fg: oklch(15% calc(0.2 * 0.5) 180);
-  --bg: oklch(75% 0.2 180 / 0.8);
-  --bg-dark: oklch(45% 0.2 180 / 0.75);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35), inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+  --bg: oklch(67.412% 0.157 242.558 / 0.8);
+  --bg-dark: oklch(42.574% 0.1404 256.414 / 0.75);
 }
 
 /* Size Variations */
 .frutiger-aero-button.small {
   padding: 0.5em 1.5em;
-  font-size: 0.875rem;
 }
 
 .frutiger-aero-button.medium {
@@ -336,12 +473,10 @@ footer::before {
   height: 47px;
   box-sizing: border-box;
   padding: 0.75em 1em;
-  font-size: 1rem;
   text-align: center;
   white-space: nowrap;
 }
 
 .frutiger-aero-button.large {
   padding: 1em 3em;
-  font-size: 1.125rem;
 }

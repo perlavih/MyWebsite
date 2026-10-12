@@ -1,5 +1,5 @@
 // DEFINE YOUR SONGS HERE
-let track_list = [
+const track_list = [
       {
           name:"One Shot One Kill",
           artist:"The Cat's Whiskers",
@@ -27,125 +27,93 @@ let track_list = [
       }
   ];
   
-// THATS ALL TY :3
+const playerWindow = document.querySelector('#window-player');
+const playerContainer = document.querySelector('#webamp-container');
+const playerStatus = document.querySelector('#webamp-status');
+let webamp;
+let initializing = false;
 
-let now_playing = document.querySelector(".now-playing");
-let track_select = document.querySelector(".track-select");
-let playpause_btn = document.querySelector(".playpause-track");
-let seek_slider = document.querySelector(".seek_slider");
-let curr_time = document.querySelector(".current-time");
-let total_duration = document.querySelector(".total-duration");
-
-let track_index = 0;
-let isPlaying = false;
-let updateTimer;
-
-let curr_track = document.getElementById("music");
-
-function populateDropdown() {
-  if (!track_select) return;
-  track_select.innerHTML = "";
-  track_list.forEach((track, index) => {
-    const option = document.createElement("option");
-    option.value = index;
-    option.textContent = `${track.name} — ${track.artist}`;
-    track_select.appendChild(option);
-  });
-  track_select.value = track_index;
-}
-
-function loadTrack(track_index) {
-  clearInterval(updateTimer);
-  resetValues();
-
-  curr_track.src = track_list[track_index].path;
-  curr_track.load();
-
-  if (now_playing) now_playing.textContent = (track_index + 1) + " / " + track_list.length;
-
-  updateTimer = setInterval(seekUpdate, 1000);
-  curr_track.addEventListener("ended", nextTrack);
-
-  if (track_select) track_select.value = track_index;
-}
-
-function resetValues() {
-  curr_time.textContent = "0:00";
-  total_duration.textContent = "0:00";
-  seek_slider.value = 0;
-}
-
-if (track_select) {
-  track_select.addEventListener("change", function() {
-    track_index = parseInt(this.value);
-    loadTrack(track_index);
-    playTrack();
-  });
-}
-
-function playpauseTrack() {
-  if (!isPlaying) playTrack();
-  else pauseTrack();
-}
-
-function playTrack() {
-  curr_track.play();
-  isPlaying = true;
-  playpause_btn.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-    viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round"
-    class="lucide lucide-pause-icon"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`;
-}
-
-function pauseTrack() {
-  curr_track.pause();
-  isPlaying = false;
-  playpause_btn.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-    viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round"
-    class="lucide lucide-play-icon"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003
-    3.458l-12 7A2 2 0 0 1 5 19z"/></svg>`;
-}
-
-function nextTrack() {
-  if (track_index < track_list.length - 1) track_index += 1;
-  else track_index = 0;
-  loadTrack(track_index);
-  playTrack();
-}
-
-function prevTrack() {
-  if (track_index > 0) track_index -= 1;
-  else track_index = track_list.length - 1;
-  loadTrack(track_index);
-  playTrack();
-}
-
-function seekTo() {
-  seekto = curr_track.duration * (seek_slider.value / 100);
-  curr_track.currentTime = seekto;
-}
-
-function seekUpdate() {
-  let seekPosition = 0;
-  if (!isNaN(curr_track.duration)) {
-    seekPosition = curr_track.currentTime * (100 / curr_track.duration);
-    seek_slider.value = seekPosition;
-
-    let currentMinutes = Math.floor(curr_track.currentTime / 60);
-    let currentSeconds = Math.floor(curr_track.currentTime - currentMinutes * 60);
-    let durationMinutes = Math.floor(curr_track.duration / 60);
-    let durationSeconds = Math.floor(curr_track.duration - durationMinutes * 60);
-
-    if (currentSeconds < 10) currentSeconds = "0" + currentSeconds;
-    if (durationSeconds < 10) durationSeconds = "0" + durationSeconds;
-
-    curr_time.textContent = currentMinutes + ":" + currentSeconds;
-    total_duration.textContent = durationMinutes + ":" + durationSeconds;
+async function initializeWebamp() {
+  if (webamp) {
+    webamp.reopen();
+    return;
+  }
+  if (initializing) return;
+  initializing = true;
+  playerWindow.classList.add('is-preloading');
+  playerStatus.hidden = false;
+  playerStatus.textContent = 'Loading Webamp…';
+  let instance;
+  try {
+    const { default: Webamp } = await import('./webamp-2.3.1.mjs');
+    if (!Webamp.browserIsSupported()) throw new Error('Unsupported browser');
+    instance = new Webamp({
+      initialSkin: {
+        url: "assets/songs/FrutigerGlassv1.wsz"
+      },
+      initialTracks: track_list.map((track) => ({
+        metaData: { artist: track.artist, title: track.name },
+        url: track.path,
+      })),
+      windowLayout: {
+        main: { position: { top: 0, left: 0 } },
+        equalizer: { position: { top: 116, left: 0 } },
+        playlist: { position: { top: 232, left: 0 } },
+      },
+    });
+    await instance.renderInto(playerContainer);
+    webamp = instance;
+    playerStatus.hidden = true;
+    fitPlayerToWebamp();
+    webamp.onClose(() => hideWindow(playerWindow, 'is-closing'));
+    webamp.onMinimize(() => hideWindow(playerWindow, 'is-minimizing'));
+  } catch (error) {
+    instance?.dispose();
+    playerStatus.textContent = 'Could not load Webamp. Close and reopen Player to retry.';
+    console.error('Webamp initialization failed:', error);
+  } finally {
+    initializing = false;
+    playerWindow.classList.remove('is-preloading');
   }
 }
 
-populateDropdown();
-loadTrack(track_index);
+function fitPlayerToWebamp() {
+  const parts = ['main-window', 'equalizer-window', 'playlist-window']
+    .map((id) => playerContainer.querySelector(`#${id}`))
+    .filter(Boolean);
+  const resizePlayer = () => {
+    if (playerWindow.classList.contains('is-hidden') && !playerWindow.classList.contains('is-preloading')) return;
+    const root = playerContainer.querySelector('#webamp');
+    if (!root) return;
+    root.style.left = '0px';
+    root.style.top = '0px';
+    const containerRect = playerContainer.getBoundingClientRect();
+    const scale = containerRect.width / playerContainer.offsetWidth || 1;
+    const bounds = parts
+      .filter((part) => part.getClientRects().length)
+      .map((part) => part.getBoundingClientRect());
+    if (!bounds.length) return;
+    const left = Math.min(...bounds.map((rect) => rect.left));
+    const top = Math.min(...bounds.map((rect) => rect.top));
+    const width = Math.round((Math.max(...bounds.map((rect) => rect.right)) - left) / scale);
+    const height = Math.round((Math.max(...bounds.map((rect) => rect.bottom)) - top) / scale);
+    root.style.left = `${-(left - containerRect.left) / scale}px`;
+    root.style.top = `${-(top - containerRect.top) / scale}px`;
+    playerWindow.style.setProperty('--webamp-width', `${width}px`);
+    playerContainer.style.width = `${width}px`;
+    playerContainer.style.height = `${height}px`;
+  };
+  const observer = new ResizeObserver(resizePlayer);
+  parts.forEach((part) => observer.observe(part));
+  resizePlayer();
+}
+
+new MutationObserver(() => {
+  if (!playerWindow.matches('.is-hidden, .is-closing, .is-minimizing')) initializeWebamp();
+}).observe(playerWindow, { attributes: true, attributeFilter: ['class'] });
+
+playerWindow.querySelector('.aero-titlebar .close').addEventListener('click', () => {
+  webamp?.stop();
+});
+
+initializeWebamp();

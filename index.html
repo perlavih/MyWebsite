@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perla Vitória — Portfólio</title>
+    <title>That cyan girl</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="style/body.css">
     <link rel="stylesheet" href="style/aerowindow.css">
     <link rel="stylesheet" href="style/variables.css">
     <link rel="stylesheet" href="style/themes.css">
     <link rel="stylesheet" href="style/windowhome.css">
     <link rel="stylesheet" href="style/windowgallery.css">
-    <link rel="stylesheet" href="style/windowpaint.css">
+    <link rel="stylesheet" href="style/windowcomms.css">
     <link rel="stylesheet" href="style/windowplayer.css">
     <link rel="stylesheet" href="style/windowschat.css">
     <link rel="stylesheet" href="style/animations.css">
@@ -24,9 +25,11 @@
     <img src="assets/icons/recycle bin empty.ico" alt="recycle bin">
     <span>Recycle Bin</span>
   </div>
+  <img class="bubblecat" src="assets/img/cat.png" alt="">
+  <img class="bubblepuppy" src="assets/img/puppy.png" alt="">
     <div class="aero-window window-home" id="window-home" data-window="home">
         <div class="aero-titlebar">
-          <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25c0 1.38 1.12 2.5 2.5 2.5.53 0 1.01-.16 1.42-.44l-.02.19c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5l-.02-.19c.4.28.89.44 1.42.44 1.38 0 2.5-1.12 2.5-2.5 0-1-.59-1.85-1.43-2.25.84-.4 1.43-1.25 1.43-2.25 0-1.38-1.12-2.5-2.5-2.5-.53 0-1.01.16-1.42.44l.02-.19C14.5 2.12 13.38 1 12 1S9.5 2.12 9.5 3.5l.02.19c-.4-.28-.89-.44-1.42-.44-1.38 0-2.5 1.12-2.5 2.5 0 1 .59 1.85 1.43 2.25-.84.4-1.43 1.25-1.43 2.25zM12 5.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8s1.12-2.5 2.5-2.5zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/></svg>
+          <img class="aero-titlebar-icon" src="assets/icons/flower.gif" width="16" height="16" alt="">
           <span class="aero-titlebar-text">PerlaVih.exe - Home</span>
           <div class="aero-caption">
             <button class="min" type="button" aria-label="Minimize"></button>
@@ -36,9 +39,9 @@
         </div>
         <div class="aero-menubar">
             <button class="button" type="button" data-open-window="home">Home</button>
-            <button class="button" type="button" data-open-window="gallery">Gallery</button>
+            <button class="button" type="button" data-open-window="gallery">Portfolio</button>
+            <button class="button" type="button" data-open-window="comms">Commissions</button>
             <button class="button" type="button" data-open-window="chat">Chat</button>
-            <button class="button" type="button" data-open-window="paint">Paint</button>
             <button class="button" type="button" data-open-window="player">Player</button>
             <button class="button2" type="button" aria-label="Translate" title="Translate">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2c0 4-2 7-5 9m2-5c1.5 2 3.5 3.5 6 4M14 19l3-7 3 7m-5-2h4" /></svg>
@@ -59,12 +62,12 @@
             <div class="profile-content">
               <div class="profile-photo" aria-label="Profile photo"><img src="assets/icons/aero-pfp-256.png" alt=""></div>
               <div class="profile-identity">
-                <h1>Perla Vih</h1><p class="img-name">
+                <h1>PerlaVih</h1><p class="img-name">
                   <img src="https://text.glitter-graphics.net/sblue/p.gif" border=0><img src="https://text.glitter-graphics.net/sblue/e.gif" border=0><img src="https://text.glitter-graphics.net/sblue/r.gif" border=0><img src="https://text.glitter-graphics.net/sblue/l.gif" border=0><img src="https://text.glitter-graphics.net/sblue/a.gif" border=0><img src="https://text.glitter-graphics.net/sblue/v.gif" border=0><img src="https://text.glitter-graphics.net/sblue/i.gif" border=0><img src="https://text.glitter-graphics.net/sblue/h.gif" border=0>
                 </p>
               </div>
               <div class="profile-lower">
-                <p class="profile-pronouns"><img src="assets/icons/wing1.gif"> She/Her <img src="assets/icons/wing2.gif"></p>
+                <p class="profile-pronouns"><img src="assets/icons/wing1.gif" style="width: 16px; height: 16px;"> She • Her <img src="assets/icons/wing2.gif" style="width: 16px; height: 16px;"></p>
                 <p class="profile-info">19y | Brazilian | Artist | Student | Web & GFX Designer</p>
                 <div class="status">
                   <p id="status-details">loading...</p>
@@ -92,52 +95,92 @@
           <div class="articles-panel">
             <div class="articles" aria-label="Articles">
               <header class="articles-header">
-                <h3><img src="assets/icons/hearts.gif" alt="">Welcome to my website!</h3>
+                <h3><img src="assets/icons/blue2.gif" alt="">Welcome to my website!</h3>
               </header>
               <article>
-                <p>
-                  <img class="pngbanner" src="assets/img/welcome.gif" alt="WELCOME!">
-                  This is the main area for writing about yourself. It has its own scroll,
-                  so longer content will not change the window size.
-                </p>
+                  <img class="pngbanner welcome" src="assets/img/welcome.gif" alt="WELCOME!">
+                  <p>Hi! I'm this is my own place on the internet, where you'll find <b>stuff about me, my hobbies, my interests, my art portfolio, and more.</b> Hope you like and enjoy it!</p>
+                  <p>This website was all made by me, full inspired on the <b>Windows 7 OS</b> layout and the <b>y2k Frutiger Aero</b> aesthetic. Also, some of <b>my own</b> style. Besides it runs better on a desktop, this site can also function on mobie devices, but make sure to check it on a desktop to see excusive stuff!</p>
+                  <p>The windows are all <b>functionable</b>. Click on the <b>maximized button</b> at the window to open full mode, the <b>minimized button</b> and the <b>close button</b> will close the window. But, you can acess them again at the taskbar anytime you want. You can use the <b>translate</b> (Portuguese) and the <b>theme</b> buttons to change them with your prefrences. It's theme changes depending on your local timezone.</p>
+                  <img class="divider" src="assets/img/sparkles6.gif" alt="">
               </article>
             </div>
 
-            <div class="articles" aria-label="Articles">
-              <header class="articles-header">
-                <h3><img src="assets/icons/heart2.gif" alt="">About me</h3>
-              </header>
-              <article>
-                <img class="banner" src="assets/img/banner1.gif" alt="">
-                <p>
-                  This is the main area for writing about yourself. It has its own scroll,
-                  so longer content will not change the window size.
-                </p>
-              </article>
+            <div class="secao">
+
+              <div class="articles" aria-label="Articles">
+                <header class="articles-header">
+                  <h3><img src="assets/icons/sprakles.gif" alt="">About me</h3>
+                </header>
+                <article>
+                    <p class="sticker" style="text-align: start;">
+                      <img class="sticker-small" src="assets/icons/emoticon.png" width="50px" alt="">
+                      I'm <b>Perla Vitoria</b>, a student of <b>Information Systems</b> in a Federal University, casually trying to live as an introvert young adult with social anxiety-.. I really love the concept of nature mixed with technology, so I hope we can make this world a different world in the future.</p> <p class="sticker" style="text-align: start;"><img class="sticker-right" src="assets/img/pc.png" alt=""> My habilities includes <b>coding</b>, <b>designing</b> and <b>drawing</b>, my goal is to get a little better at these stuff everyday. I also love astronomy and zoology! Love all the animals, specially <b>bunnies</b> and <b>seals</b>! I have <b>cyan</b> as my favorite color, <b>EDM</b> as my favorite genre and I adore the <b>y2k aesthetic</b>, although I was born in <b>2006</b>. I have a nonsense humor (I laught of literally anything) and a bit of an acid humor too. Did I say that I love gaming? I used to play a lot of flash games and old ps2/nintendo games back in 2009-2015, but today I only play on pc.
+                    </p>
+                    <div class="tags">
+                      <div class="tag"><img src="assets/icons/beijo.png" alt=""><span>Im a Girl!</span></div>
+                      <div class="tag"><img src="assets/icons/demisexual.png" alt=""><span>Demisexual</span></div>
+                      <div class="tag"><img src="assets/icons/bunny16.gif" alt=""><span>Bunni lover</span></div>
+                      <div class="tag"><img src="assets/icons/dolphinswimming.gif" alt=""><span>Frutiger aqua</span></div>
+                      <div class="tag"><img src="assets/icons/bouquet.gif" alt=""><span>Taken</span></div>
+                      <div class="tag"><img src="assets/icons/book7.gif" alt=""><span>Nerd</span></div>
+                      <div class="tag"><img src="assets/icons/pencil5.gif" alt=""><span>Artist</span></div>
+                      <div class="tag"><img src="assets/icons/laptop4.gif" alt=""><span>Kubuntu user</span></div>
+                      <div class="tag"><img src="assets/icons/brazil.png" alt=""><span>Brasil porr</span></div>
+                      <div class="tag"><img src="assets/icons/disc3.gif" alt=""><span>Web design</span></div>
+                      <div class="tag"><img src="assets/icons/butterfly.gif" alt=""><span>Rave the world</span></div>
+                    </div>
+                </article>
+              </div>
+  
+              <div class="articles status-article" aria-label="Articles">
+                <header class="articles-header">
+                  <h3><img src="assets/icons/blue4.gif" alt="">Status</h3>
+                </header>
+                <article class="scrolldown">
+                    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=perlavih" defer></script>
+                    <img class="divider" src="assets/img/bubbles3.gif" alt="">
+                </article>
+              </div>
+
             </div>
 
-            <div class="articles" aria-label="Articles">
-              <header class="articles-header">
-                <h3>Articles</h3>
-              </header>
-              <article>
-                <h2>About me</h2>
-                <p>
-                  This is the main area for writing about yourself. It has its own scroll,
-                  so longer content will not change the window size.
-                </p>
-              </article>
+            <div class="secao2">
+
+              <div class="articles" aria-label="Articles">
+                <header class="articles-header">
+                  <h3><img src="assets/icons/sprakles.gif" alt="">Games</h3>
+                </header>
+                <article>
+                  <p>
+                    a
+                  </p>
+                  <img class="divider" src="assets/img/memory_rain_fix_walk.gif" alt="">
+                </article>
+              </div>
+
+              <div class="articles" aria-label="Articles">
+                <header class="articles-header">
+                  <h3><img src="assets/icons/sprakles.gif" alt="">Music</h3>
+                </header>
+                <article>
+                  <p>
+
+                  </p>
+                </article>
+              </div>
+
+              <div class="articles" aria-label="Articles">
+                <header class="articles-header">
+                  <h3><img src="assets/icons/sprakles.gif" alt="">Media</h3>
+                </header>
+                <article>
+                  <p></p>
+                </article>
+              </div>
+
             </div>
 
-            <div class="articles" aria-label="Articles">
-              <header class="articles-header">
-                <h3>Articles</h3>
-              </header>
-              <article>
-                <h2>About me</h2>
-                
-              </article>
-            </div>
           </div>
         </main>
 
@@ -150,39 +193,242 @@
 
     <section class="aero-window window-gallery is-hidden" id="window-gallery" data-window="gallery" aria-label="Art Gallery">
       <div class="aero-titlebar">
-        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
+        <img class="aero-titlebar-icon" src="assets/icons/star.gif" width="16" height="16" alt="">
         <span class="aero-titlebar-text">PerlaVih.exe - Art Gallery</span>
         <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
       </div>
       <main class="gallery-body">
 
         <aside class="menu">
-          <div class="header"><p><img src="assets/icons/stars.gif">Menu</p></div>
+          <div class="header"><h3><img src="assets/icons/stars.gif">Menu</h3></div>
           <div class="menu-content">
+            <ul class="buttons">
+              <li><button class="frutiger-aero-button medium is-selected" type="button" data-filter="all" aria-pressed="true">All my arts</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="drawings" aria-pressed="false">Drawings</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="websites" aria-pressed="false">Websites</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="gfx" aria-pressed="false">GFX designs</button></li>
+              <li><button class="frutiger-aero-button medium" type="button" data-filter="fanarts" aria-pressed="false">Fanarts</button></li>
+            </ul>
             <div class="text">
               <p>Welcome to the Art gallery! This place is my Portfolio where I post all my arts and in "Fanarts" you can find others people arts too!</p>
             </div>
-            <ul class="filter">
-              <li><button class="frutiger-aero-button medium is-selected" type="button" data-filter="all" aria-pressed="true">All arts</button></li>
-              <li><button class="frutiger-aero-button medium" type="button" data-filter="traditional" aria-pressed="false">Traditional art</button></li>
-              <li><button class="frutiger-aero-button medium" type="button" data-filter="digital" aria-pressed="false">Digital art</button></li>
-              <li><button class="frutiger-aero-button medium" type="button" data-filter="gfx" aria-pressed="false">GFX designs</button></li>
-              <li><button class="frutiger-aero-button medium" type="button" data-filter="fanart" aria-pressed="false">Fanarts</button></li>
-            </ul>
           </div>
         </aside>
+
         <div class="gallery">
-          <iframe src="http://www.kao-ani.com/goodies/clock_1.php" width="88" height="31" scrolling="no" frameborder="no" allowtransparency="true" border="0" framespacing="0"></iframe>
+
+          <div class="year">
+            <span class="year-h1"><h1>2026</h1></span>
+            <div class="year-header"></div>
+          </div>
+
+          <div class="arts">
+            <img src="assets/arts/image-28.png" alt="" data-category="fanarts" data-description="By Yosh" loading="lazy">
+            <img src="assets/arts/IMG_1268.PNG" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/Captura_de_tela_20261010_172041.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/258_Sem_Titulo_20260210000324.png" alt="" data-category="fanarts" data-description="By C4tebu" loading="lazy">
+            <img src="assets/arts/Captura_de_tela_20261010_170701.png" alt="" data-category="fanarts" data-description="By MrElegant" loading="lazy">
+            <img src="assets/arts/IMG_0273.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_0460.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_0492.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_0611.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_4632.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_IMG_0220.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_Ilustracao4.png" alt="" data-category="drawings" loading="lazy">
+          </div>
+
+          <div class="year">
+            <span class="year-h1"><h1>2025</h1></span>
+            <div class="year-header"></div>
+          </div>
+
+          <div class="arts">
+            <img src="assets/arts/SPOILER_90_Sem_Titulo_20250421145236.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_91_Sem_Titulo_20250421183714.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_4040.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/image-17.png" alt="" data-category="fanarts" data-description="By Yosh" loading="lazy">
+            <img src="assets/arts/image-13.png" alt="" data-category="fanarts" data-description="By Yosh" loading="lazy">
+            <img src="assets/arts/bobie.png" alt="drawings" data-category="" loading="lazy">
+            <img src="assets/arts/SPOILER_IMG_20251203_151752882_HDR.jpg" alt="" data-category="fanarts" data-description="By IcyBobie" loading="lazy">
+            <img src="assets/arts/SPOILER_161_Sem_Titulo_20251222202228.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/a59a8cd4-0823-4bb3-816f-6e16e1f45209.png" alt="" data-category="fanarts" data-description="By Joots" loading="lazy">
+            <img src="assets/arts/IMG_9137.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_9145.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_9706.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/Ilustracao.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/162_Sem_Titulo_20251224120537.png" alt="" data-category="fanarts" data-description="By Riel" loading="lazy">
+            <img src="assets/arts/Captura_de_tela_20261010_172220.png" alt="" data-category="fanarts" data-description="By Riel" loading="lazy">
+            <img src="assets/arts/170_Sem_Titulo_20251205002358.png" alt="" data-category="fanarts" data-description="By Riel" loading="lazy">
+            <img src="assets/arts/IMG_1374.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_20251227_130707.jpg" alt="" data-category="fanarts" data-description="By Yohan Fritsch" loading="lazy">
+            <img src="assets/arts/134_Sem_Titulo_20250311015601.jpg" alt="" data-category="fanarts" data-description="By Bruna" loading="lazy">
+            <img src="assets/arts/157_Sem_Titulo2_20251219172530.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/189_Sem_Titulo_20251219194443.png" alt="" data-category="fanarts" data-description="By Riel" loading="lazy">
+          </div>
+
+          <div class="year">
+            <span class="year-h1"><h1>2024</h1></span>
+            <div class="year-header"></div>
+          </div>
+          
+          <div class="arts">
+            <img src="assets/arts/IMG_1037.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_1372.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_1373.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/Perla_PFP.png" alt="" data-category="fanarts" data-description="By Veeh" loading="lazy">
+            <img src="assets/arts/erplaBDAY.png" alt="" data-category="fanarts" data-description="By Veeh" loading="lazy">
+            <img src="assets/arts/62_Sem_Titulo_20261010191818.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/36_Sem_Titulo_20240112005607.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/61_Sem_Titulo_20241004160120.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/Captura_de_tela_20261010_172420.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_73_Sem_Titulo_20250214175301.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/502_Sem_Titulo_20241204234648.png" alt="" data-category="fanarts" data-description="By Riel" loading="lazy">
+            <img src="assets/arts/IMG_0051.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_40_Sem_Titulo_20240713233446.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/41_Sem_Titulo_20250108015257.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/IMG_1377.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/IMG_1378.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/IMG_1379.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/IMG_1380.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/IMG_20240214_171439457.jpg" alt="" data-category="fanarts" data-description="By IcyBobie" loading="lazy">
+            <img src="assets/arts/SPOILER_69_Sem_Titulo_20250208233130.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/SPOILER_84_Sem_Titulo_20250322224126.png" alt="" data-category="gfx" loading="lazy">
+          </div>
+
+          <div class="year">
+            <span class="year-h1"><h1>2023</h1></span>
+            <div class="year-header"></div>
+          </div>
+
+          <div class="arts">
+            <img src="assets/arts/CBF468E5-915E-4A6E-815B-8DFA4EAB945D.jpg" alt="" data-category="fanarts" data-description="By Veeh" loading="lazy">
+            <img src="assets/arts/SPOILER_31_Sem_Titulo_202409201215162.png" alt="" data-category="fanarts" data-description="By C4tebu" loading="lazy">
+            <img src="assets/arts/SPOILER_748_Sem_Titulo_20231204204211.png" alt="" data-category="fanarts" data-description="By IcyBobie" loading="lazy">
+            <img src="assets/arts/SPOILER_BobXerplahgfayhfuashfuahfs.png" alt="" data-category="fanarts" data-description="By Veeh" loading="lazy">
+            <img src="assets/arts/166_Sem_Titulo_20230802221232.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/20_Sem_Titulo_20240420195953.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/25_Sem_Titulo_20231214235959.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/D2658649-5ABE-4EEE-8271-015FE4E3ADD5.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_Screenshot_20231203_030545_FlipaClip.jpg" alt="" data-category="fanarts" data-description="By C4tebu" loading="lazy">
+            <img src="assets/arts/IMG_0757.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/7_Sem_Titulo_20231002215420.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/95_Sem_Titulo_20231205173413.png" alt="" data-category="fanarts" data-description="By Collet" loading="lazy">
+            <img src="assets/arts/96_Sem_Titulo_20231205175732.png" alt="" data-category="fanarts" data-description="By Collet" loading="lazy">
+            <img src="assets/arts/CD4C9ED4-974C-4C31-9C6B-3E163EA400BB.png" alt="drawing" data-category="drawings" loading="lazy">
+            <img src="assets/arts/7_Sem_Titulo_20231231193153.png" alt="" data-category="fanarts" data-description="By Green" loading="lazy">
+            <img src="assets/arts/118_Sem_Titulo_20230802220447.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/123_Sem_Titulo_20230802220457.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/193_Sem_Titulo_20230802221514.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/195_Sem_Titulo_20230802221311.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/198_Sem_Titulo_20230802221333.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/6fbf4222-7fc0-4f71-b7a8-8fadb1007c00.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/84_Sem_Titulo_20230802220216.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/60_Sem_Titulo_20221001171303.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/208_Sem_Titulo_20230802221433.png" alt="" data-category="drawings" 
+            loading="lazy">
+            <img src="assets/arts/147_Sem_Titulo_20230802212405.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/150_Sem_Titulo_20230802212343.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/153_Sem_Titulo_20230802221145.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/141_Sem_Titulo_20230802220619.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7955.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/209_Sem_Titulo_Restaurado_20230802221359.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/222_Sem_Titulo.jpg" alt="" data-category="fanarts" data-description="By Joots" loading="lazy">
+            <img src="assets/arts/157968ce-7935-4e42-8076-f1b4a9164bac.png" alt="" data-category="fanarts" data-description="By Veeh" loading="lazy">
+            <img src="assets/arts/162_Sem_Titulo_20230420002549.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_Screenshot_2023_0128_135759.png" alt="" data-category="fanarts" data-description="By Tanya" loading="lazy">
+            <img src="assets/arts/a.png" alt="" data-category="fanarts" data-description="By RED" loading="lazy">
+            <img src="assets/arts/image.png" alt="" data-category="fanarts" data-description="By Veeh" loading="lazy">
+          </div>
+
+          <div class="year">
+            <span class="year-h1"><h1>2022</h1></span>
+            <div class="year-header"></div>
+          </div>
+
+          <div class="arts">
+            <img src="assets/arts/SPOILER_00DA3796-0B49-4FF9-BAAD-988F69660858.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/SPOILER_131_Sem_Titulo2_20221231150532.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/81_Sem_Titulo.2022.05.30-22.58_20221001171215.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/476_Sem_Titulo.jpg" alt="" data-category="fanarts" data-description="By IcyBobie" loading="lazy">
+            <img src="assets/arts/83_Sem_Titulo_20221001171207.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_6278.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/87_Sem_Titulo_20221001171156.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/90_Sem_Titulo_20221001171151.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/91_Sem_Titulo_20221001171144.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/64_Sem_Titulo_20221001171251.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/66_Sem_Titulo2_20221001171231.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/126_Sem_Titulo_20230802220506.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/101_Sem_Titulo_20221001171104.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/66_Sem_Titulo3_20221001171240.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/23_Sem_Titulo_20220108213616.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/54_Sem_Titulo_20221001171323.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/55_Sem_Titulo_20221001171314.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7491.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7499.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7500.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7501.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7502.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7503.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7504.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7505.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/56_Sem_Titulo_20230802220228.png" alt="" data-category="gfx" loading="lazy">
+            <img src="assets/arts/27_Sem_Titulo_20220116154213.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/29_Sem_Titulo_20220124020801.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/41_Sem_Titulo_20221001171351.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/43_Sem_Titulo2_20221001171338.png" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/104_Sem_Titulo_20221001171052.png" alt="" data-category="drawing loading="lazy">
+          </div>
+
+          <div class="year">
+            <span class="year-h1"><h1>-2021</h1></span>
+            <div class="year-header"></div>
+          </div>
+
+          <div class="arts">
+            <img src="assets/arts/58a1e8f7-8942-4287-9522-36043da6d667.jpg" alt="" data-category="fanarts" data-description="By Jdbis" loading="lazy">
+            <img src="assets/arts/IMG_6281.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_6286.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7506.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7507.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7508.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7509.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7510.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7511.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7512.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7521.jpg" alt="" data-category="drawings" loading="lazy">
+            <img src="assets/arts/IMG_7522.jpg" alt="" data-category="drawings" loading="lazy">
+          </div>
 
         </div>
+
+        <button class="gallery-back-top" type="button" aria-label="Voltar ao topo da galeria" aria-hidden="true" tabindex="-1" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6" /></svg>
+        </button>
+
         <div class="lightbox">
           <button class="close">&times;</button>
           <button class="prev">&#8249;</button>
-          <img src="" alt="lightbox image" />
+          <figure class="lightbox-content">
+            <img src="" alt="lightbox image" />
+            <figcaption class="lightbox-description" hidden></figcaption>
+          </figure>
           <button class="next">&#8250;</button>
         </div>
       </main>
     </section>
+
+
+    <section class="aero-window window-comms is-hidden" id="window-comms" data-window="comms" aria-label="Commissions">
+      <div class="aero-titlebar">
+        <img class="aero-titlebar-icon" src="assets/icons/mark.gif" width="16" height="16" alt="">
+        <span class="aero-titlebar-text">PerlaVih.exe - Comissions</span>
+        <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
+      </div>
+      <main class="comms-body">
+          <p>-- Coming soon! --</p>
+      </main>
+    </section>
+
 
     <section class="aero-window window-chat is-hidden" id="window-chat" data-window="chat" aria-label="Chat">
       <div class="aero-titlebar">
@@ -195,66 +441,25 @@
       </main>
     </section>
 
-    <section class="aero-window window-paint is-hidden" id="window-paint" data-window="paint" aria-label="Paint">
-      <div class="aero-titlebar">
-        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
-        <span class="aero-titlebar-text">PerlaVih.exe - Paint</span>
-        <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="max" type="button" aria-label="Maximize"></button><button class="close" type="button" aria-label="Close"></button></div>
-      </div>
-      <main class="paint-body">
-        <iframe src="https://jspaint.app" width="100%"  height="100%" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-      </main>
-    </section>
-
     <section class="aero-window window-player is-hidden" id="window-player" data-window="player" aria-label="Player">
+
       <div class="aero-titlebar">
-        <svg class="aero-titlebar-icon" width="16" height="16" viewBox="0 0 24 24" fill="#149492" aria-hidden="true"><path d="M12 3C6.5 3 2 6.7 2 11.2c0 2.5 1.4 4.8 3.7 6.3L5 22l4.7-2.5c.75.15 1.52.23 2.3.23 5.5 0 10-3.7 10-8.3S17.5 3 12 3Z"/></svg>
+        <img class="aero-titlebar-icon" src="assets/icons/player.gif" width="16" height="16" alt="">
         <span class="aero-titlebar-text">PerlaVih.exe - Player</span>
         <div class="aero-caption"><button class="min" type="button" aria-label="Minimize"></button><button class="close" type="button" aria-label="Close"></button></div>
       </div>
+
       <main class="player-body">
-        <div id="musicplayer">   
-          <div class="player-flex">
-              <div class="player-icon-holder">
-              <div class="player-icon"></div>
-              </div>
-              <div class="player-main">
-                   
-          <select class="track-select"></select>
-        <div class="controls">
-            <div class="seeking">
-                <div class="current-time">00:00</div>
-  
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-  
-                <div class="total-duration">0:00</div>
-            </div>
-  
-            <div class="player-buttons">
-                <button class="window-button prev-track" onclick="prevTrack()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-back-icon lucide-skip-back"><path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z"/><path d="M3 20V4"/></svg>
-                </button>
-  
-                <button class="window-button playpause-track" onclick="playpauseTrack()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-                </button>
-  
-                <button class="window-button next-track" onclick="nextTrack()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-skip-forward-icon lucide-skip-forward"><path d="M21 4v16"/><path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z"/></svg>
-                </button>
-            </div>
-        </div>
-  
-              </div>
-          </div>
-  
-        <audio id="music" src=""></audio>
-    </div>
+        <p id="webamp-status" role="status">Loading Webamp…</p>
+        <div id="webamp-container"></div>
       </main>
+
     </section>
 
       <footer>
+
         <div class="left-side">
+
           <ul>
             <li>
               <button type="button" data-open-window="home">
@@ -265,33 +470,72 @@
               <img src="assets/icons/mspaint icon.ico" alt="Art Gallery">
             </button>
             </li>
+            <li><button type="button" data-open-window="comms">
+              <img src="assets/icons/comms.png" alt="Comissions">
+            </button>
+            </li>
             <li>
               <button type="button" data-open-window="chat">
                 <img src="assets/icons/frutiger aero globe icon.ico" alt="Chat">
               </button>
             </li>
-            <li><button type="button" data-open-window="paint">
-              <img src="assets/icons/mspaint icon.ico" alt="Paint">
-            </button>
-            </li>
             <li><button type="button" data-open-window="player">
-              <img src="assets/icons/mspaint icon.ico" alt="Player">
+              <img src="assets/icons/player.png" alt="Player">
             </button>
             </li>
           </ul>
+
         </div>
+
         <div class="right-side">
-          <div id="bar-icons">
-            <svg class="tray-icon tray-icon-network" viewBox="0 0 24 24" role="img"><path d="M3 20h3v-4H3zm5 0h3v-8H8zm5 0h3V8h-3zm5 0h3V3h-3z"/></svg>
-            <svg class="tray-icon tray-icon-volume" viewBox="0 0 24 24" role="img"><path d="M4 10v4h4l5 4V6l-5 4z"/><path d="M16 9.5a4 4 0 0 1 0 5M19 7a7.5 7.5 0 0 1 0 10" fill="none" stroke-linecap="round"/></svg>
+
+          <div class="credits">
+            <div class="credit-group">
+              <button class="credit" type="button" aria-describedby="credits-balloon">Credits</button>
+              <div class="credits-balloon" id="credits-balloon">
+                <div class="credits-balloon-body">
+                  <p>perlavih © 2026 - 2026</p>
+                  <p>Bubble cursor by <a href="https://github.com/tholman/cursor-effects" target="_blank" rel="noopener noreferrer">tholman</a></p>
+                  <p>Frutiger aero cursors by <a href="https://tepaiini.itch.io/frutiger-aero">Tepaiini</a></p>
+                  <p>Music player by <a href="https://docs.webamp.org/">Webamp</a></p>
+                  <p>Frutiger aero window, buttons and pfp by <a href="https://makeaero.com/">Makeaero</a></p>
+                  <p>Some other resources:
+                    <a href="https://loveberry.nekoweb.org/resources">Loveberry</a>
+                    <a href="https://petrapixel.neocities.org/">Petrapixel</a>
+                    <a href="https://www.glitter-graphics.com/">Glittergraphics</a>
+                    <a href="https://webcode.tools/">Webcodetools</a>
+                    <a href="https://www.picmix.com/">Picmix</a>
+                    <a href="https://rice.place/other/discord.html">Discord status</a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div id="bar-icons">
+            <svg fill="#ffffff" width="16px" height="16px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.92"> <title>signal-strong</title> <path d="M2 24.75c-0.69 0-1.25 0.56-1.25 1.25v4c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-4c-0-0.69-0.56-1.25-1.25-1.25h-0zM8.968 18.75c-0.69 0-1.25 0.56-1.25 1.25v10c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-10c-0-0.69-0.56-1.25-1.25-1.25h-0zM16 12.75c-0.69 0-1.25 0.56-1.25 1.25v0 16c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-16c0-0.69-0.56-1.25-1.25-1.25v0zM23 6.749c-0.69 0-1.25 0.56-1.25 1.25v22.001c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-22.001c-0-0.69-0.56-1.25-1.25-1.25h-0z"></path> </g><g id="SVGRepo_iconCarrier"> <title>signal-strong</title> <path d="M2 24.75c-0.69 0-1.25 0.56-1.25 1.25v4c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-4c-0-0.69-0.56-1.25-1.25-1.25h-0zM8.968 18.75c-0.69 0-1.25 0.56-1.25 1.25v10c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-10c-0-0.69-0.56-1.25-1.25-1.25h-0zM16 12.75c-0.69 0-1.25 0.56-1.25 1.25v0 16c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-16c0-0.69-0.56-1.25-1.25-1.25v0zM23 6.749c-0.69 0-1.25 0.56-1.25 1.25v22.001c0 0.69 0.56 1.25 1.25 1.25s1.25-0.56 1.25-1.25v0-22.001c-0-0.69-0.56-1.25-1.25-1.25h-0z"></path> </g></svg>
+            <svg fill="#ffffff" width="16px" height="16px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-g</title><path d="M232,416a23.88,23.88,0,0,1-14.2-4.68,8.27,8.27,0,0,1-.66-.51L125.76,336H56a24,24,0,0,1-24-24V200a24,24,0,0,1,24-24h69.75l91.37-74.81a8.27,8.27,0,0,1,.66-.51A24,24,0,0,1,256,120V392a24,24,0,0,1-24,24ZM125.82,336Zm-.27-159.86Z"></path><path d="M320,336a16,16,0,0,1-14.29-23.19c9.49-18.87,14.3-38,14.3-56.81,0-19.38-4.66-37.94-14.25-56.73a16,16,0,0,1,28.5-14.54C346.19,208.12,352,231.44,352,256c0,23.86-6,47.81-17.7,71.19A16,16,0,0,1,320,336Z"></path><path d="M368,384a16,16,0,0,1-13.86-24C373.05,327.09,384,299.51,384,256c0-44.17-10.93-71.56-29.82-103.94a16,16,0,0,1,27.64-16.12C402.92,172.11,416,204.81,416,256c0,50.43-13.06,83.29-34.13,120A16,16,0,0,1,368,384Z"></path><path d="M416,432a16,16,0,0,1-13.39-24.74C429.85,365.47,448,323.76,448,256c0-66.5-18.18-108.62-45.49-151.39a16,16,0,1,1,27-17.22C459.81,134.89,480,181.74,480,256c0,64.75-14.66,113.63-50.6,168.74A16,16,0,0,1,416,432Z"></path></g></svg>
+          </div>
+
           <div id="date-time-section">
             <h2 id="taskbar-time"></h2>
             <h2 id="taskbar-date"></h2>
           </div>
+
           <button id="bar"></button>
+
         </div>
+        
       </footer>
+
+    <script type="module">
+      import Webamp from "https://unpkg.com/webamp@^2";
+      const webamp = new Webamp({});
+
+      // Returns a promise indicating when it's done loading.
+      webamp.renderWhenReady(document.getElementById("app"));
+    </script>
+    <script src="scripts/bubbleCursor.js"></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/player.js"></script>
     <script src="scripts/lightbox.js"></script>

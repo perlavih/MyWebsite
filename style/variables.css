@@ -1,31 +1,57 @@
 @font-face {
-    font-family: 'Frutiger';
-    src: url(../assets/fonts/Frutiger.ttf) format('truetype');
+    font-family: 'Grapesoda';
+    src: url(../assets/fonts/GrapeSoda.ttf) format('truetype');
 }
 
-@font-face {
-  font-family: "Pixelated MS Sans Serif";
-  src: url("https://files.catbox.moe/qgjjre.woff") format("woff");
-  src: url("https://files.catbox.moe/8fwbkl.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+@font-face { 
+	font-family: "Example Font Name"; 
+	src: url("./fonts/examplefontname.woff2") format("woff2"), 
+		url("./fonts/examplefontname.woff") format("woff"), 
+		url("./fonts/examplefontname.ttf") format("truetype"); 
+	font-weight: normal;
+	font-style: normal; 
+	font-display: swap; 
 }
 
-@font-face {
-  font-family: "Pixelated MS Sans Serif";
-  src: url("https://files.catbox.moe/z7csle.woff") format("woff");
-  src: url("https://files.catbox.moe/moqhx6.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
+@font-face { 
+	font-family: "Daydream"; 
+	src: url("../assets/fonts/Daydream\ DEMO.otf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Marons"; 
+	src: url("../assets/fonts/Marons-Regular.ttf") format("truetype"); 
+}
+
+@font-face { 
+	font-family: "Starshines"; 
+	src: url("../assets/fonts/Starshines.ttf") format("truetype"), url("../assets/fonts/Starshines\ Italic.ttf") format("truetype"); 
+}
+
+@keyframes floating {
+0% { transform: translate(0, 0px); }
+50% { transform: translate(0, 15px); }
+100% { transform: translate(0, -0px); }
+}
+
+@keyframes floating2 {
+0% { transform: translate(0, 0px); }
+50% { transform: translate(0, -15px); }
+100% { transform: translate(0, -0px); }
+}
+
+::selection {
+  background-color: rgb(88, 209, 209);
 }
 
 :root {
+  --day-bold: rgba(0, 63, 122, 0.92);
   --day-background: #8fc3df;
   --day-window-text: #1b1b1b;
   --day-window-muted: #555b63;
   --day-glass: hsl(185 65% 52% / .5);
   --day-menu-gradient: linear-gradient(#ffffff 0%, #eef2f9 45%, #dbe3f1 55%, #e9eef8 100%);
-  --day-header-gradient: linear-gradient(180deg, rgba(131, 247, 255, 0.951) 0%, rgba(60, 143, 237, 0.92) 100%);
+  --day-header-gradient: linear-gradient(180deg, rgb(47, 255, 255) 0%, rgba(0, 121, 201, 0.92) 100%);
   --day-home-glass: linear-gradient(145deg, rgba(230, 248, 255, .72) 0%, rgba(161, 217, 246, 0.68) 60%, rgba(179, 240, 224, 0.65) 100%);
   --day-panel: #f0f0f0;
   --day-border: rgba(0, 0, 0, .48);
@@ -35,6 +61,7 @@
   --day-paint-surface: linear-gradient(135deg, #f8fbff, #dce8f0);
   --day-chat-surface: #edf5fa;
 
+  --night-bold: rgba(152, 234, 255, 0.92);
   --night-background: #081221;
   --night-window-text: #e3edf6;
   --night-window-muted: #a9bacb;
@@ -52,8 +79,9 @@
   --night-gallery-text: #d8efff;
   --night-gallery-muted: #a5b9cb;
   --night-chat-surface: #152536;
-  --night-header-gradient: linear-gradient(180deg, rgba(152, 184, 253, 0.88) 0%, rgba(40, 100, 153, 0.92) 100%);
+  --night-header-gradient: linear-gradient(180deg, rgba(100, 219, 255, 0.88) 0%, rgba(7, 88, 180, 0.92) 100%);
 
+  --bold: var(--day-bold);
   --background: var(--day-background);
   --window-text: var(--day-window-text);
   --window-muted: var(--day-window-muted);
@@ -70,9 +98,8 @@
   --chat-surface: var(--day-chat-surface);
   --titlebar-gradient: linear-gradient(90deg, #6a1535, #b23965, #f9a5b9);
   --dialog-blue: #6a1535;
-  --dialog-accent: white; /* color of text on diaglog blue */
-  --titlebar-color: white; /* reccomended to change so its easy to read on titlebar color */
-  --player-image: url(https://loveberry.nekoweb.org/assets/images/mp/yuzuha.png);
+  --dialog-accent: white; 
+  --titlebar-color: white;
   --surface: #c0c0c0;
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
