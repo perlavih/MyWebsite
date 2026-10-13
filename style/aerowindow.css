@@ -173,6 +173,7 @@
   border: 1px solid currentColor;
   border-top-width: 2px;
 }
+
 .aero-window .aero-caption .close::before {
   content: "\2715";
   font-size: 11px;

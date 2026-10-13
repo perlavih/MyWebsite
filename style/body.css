@@ -101,10 +101,15 @@ body::after {
   left: 7%;
   max-width: 150px;
   z-index: 0;
-  pointer-events: none;
+  pointer-events: auto;
   scale: -1 1;
   animation: floating2 3s infinite ease-in-out;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
+  transition: scale 0.3s ease-in-out;
+}
+
+.bubblecat:hover {
+  scale: -1.05 1.05;
 }
 
 .bubblepuppy {
@@ -113,10 +118,14 @@ body::after {
   right: 7%;
   max-width: 150px;
   z-index: 0;
-  pointer-events: none;
   scale: -1 1;
   animation: floating 3s infinite ease-in-out;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
+  transition: scale 0.3s ease-in-out
+}
+
+.bubblepuppy:hover {
+  scale: -1.05 1.05;
 }
 
 ::-webkit-scrollbar {
@@ -150,7 +159,7 @@ footer {
     color: #fff;
     border-top: 1px solid rgba(255, 255, 255, .72);
     border-bottom: 1px solid rgba(255, 255, 255, .72);
-    background: linear-gradient(to bottom, rgba(240, 249, 250, .25), rgba(110, 139, 145, .25) 45%, rgba(41, 62, 70, .38));
+    background: linear-gradient(to bottom, rgba(240, 249, 250, 0.158), rgba(110, 139, 145, .25) 45%, rgba(41, 62, 70, .38));
     box-shadow: 0 -1px 4px rgba(14, 29, 37, .32), inset 0 1px rgba(255, 255, 255, .34);
     backdrop-filter: blur(6px) saturate(1.04);
     -webkit-backdrop-filter: blur(6px) saturate(1.04);
@@ -444,7 +453,7 @@ footer .left-side button img {
 .frutiger-aero-button:hover,
 .frutiger-aero-button:focus {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 /* Active State */

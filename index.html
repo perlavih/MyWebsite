@@ -43,7 +43,7 @@
             <button class="button" type="button" data-open-window="comms">Commissions</button>
             <button class="button" type="button" data-open-window="chat">Chat</button>
             <button class="button" type="button" data-open-window="player">Player</button>
-            <button class="button2" type="button" aria-label="Translate" title="Translate">
+            <button class="button2" id="language-toggle" type="button" aria-label="Translate to Portuguese" title="Translate to Portuguese">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h8M8 3v2c0 4-2 7-5 9m2-5c1.5 2 3.5 3.5 6 4M14 19l3-7 3 7m-5-2h4" /></svg>
             </button>
             <button class="button2" id="theme-toggle" type="button" aria-label="Switch themes" title="Switch themes" aria-pressed="false">
@@ -77,13 +77,13 @@
                   <a class="social-button" aria-label="Discord" href="https://discord.com/users/668624752696623156" target="_blank">
                     <img src="assets/icons/discord.png" alt="discord">
                   </a>
-                  <a class="social-button" aria-label="Youtube" href="#" target="_blank">
+                  <a class="social-button" aria-label="Youtube" href="https://www.youtube.com/@iamperlavih" target="_blank">
                     <img src="assets/icons/youtube.png" alt="Youtube">
                   </a>
-                  <a class="social-button" aria-label="Bluesky" href="#" target="_blank">
+                  <a class="social-button" aria-label="Bluesky" href="https://bsky.app/profile/iamperlavih.bsky.social" target="_blank">
                     <img src="assets/icons/bluesky.png" alt="bluesky">
                   </a>
-                  <a class="social-button" aria-label="Instagram" href="#" target="_blank">
+                  <a class="social-button" aria-label="Instagram" href="https://www.instagram.com/p3rl4v1h/" target="_blank">
                     <img src="assets/icons/instagram.png" alt="instagram">
                   </a>
                 </nav>
@@ -115,7 +115,7 @@
                 <article>
                     <p class="sticker" style="text-align: start;">
                       <img class="sticker-small" src="assets/icons/emoticon.png" width="50px" alt="">
-                      I'm <b>Perla Vitoria</b>, a student of <b>Information Systems</b> in a Federal University, casually trying to live as an introvert young adult with social anxiety-.. I really love the concept of nature mixed with technology, so I hope we can make this world a different world in the future.</p> <p class="sticker" style="text-align: start;"><img class="sticker-right" src="assets/img/pc.png" alt=""> My habilities includes <b>coding</b>, <b>designing</b> and <b>drawing</b>, my goal is to get a little better at these stuff everyday. I also love astronomy and zoology! Love all the animals, specially <b>bunnies</b> and <b>seals</b>! I have <b>cyan</b> as my favorite color, <b>EDM</b> as my favorite genre and I adore the <b>y2k aesthetic</b>, although I was born in <b>2006</b>. I have a nonsense humor (I laught of literally anything) and a bit of an acid humor too. Did I say that I love gaming? I used to play a lot of flash games and old ps2/nintendo games back in 2009-2015, but today I only play on pc.
+                      I'm <b>Perla Vitoria</b>, a student of <b>Information Systems</b> in a Federal University, casually trying to live as an introvert young adult with social anxiety born in <b>2006</b>. I really love the concept of nature mixed with technology, so I hope we can make this world a different world in the future.</p> <p class="sticker" style="text-align: start;"><img class="sticker-right" src="assets/img/pc.png" alt=""> My habilities includes <b>coding</b>, <b>designing</b> and <b>drawing</b>, my goal is to get a little better at these stuff everyday. I also love astronomy and zoology! Love all the animals, specially <b>bunnies</b> and <b>seals</b>! I have <b>cyan</b> as my favorite color, my humor is more like a nonsense humor (I laught of literally anything) and a bit of an acid humor too. A thing that makes me feel happy everyday is my Friendships and my Relationships, I want to take care of them just like they care about me.
                     </p>
                     <div class="tags">
                       <div class="tag"><img src="assets/icons/beijo.png" alt=""><span>Im a Girl!</span></div>
@@ -126,7 +126,7 @@
                       <div class="tag"><img src="assets/icons/book7.gif" alt=""><span>Nerd</span></div>
                       <div class="tag"><img src="assets/icons/pencil5.gif" alt=""><span>Artist</span></div>
                       <div class="tag"><img src="assets/icons/laptop4.gif" alt=""><span>Kubuntu user</span></div>
-                      <div class="tag"><img src="assets/icons/brazil.png" alt=""><span>Brasil porr</span></div>
+                      <div class="tag"><img src="assets/icons/brazil.png" alt=""><span>Brasil poha</span></div>
                       <div class="tag"><img src="assets/icons/disc3.gif" alt=""><span>Web design</span></div>
                       <div class="tag"><img src="assets/icons/butterfly.gif" alt=""><span>Rave the world</span></div>
                     </div>
@@ -137,9 +137,11 @@
                 <header class="articles-header">
                   <h3><img src="assets/icons/blue4.gif" alt="">Status</h3>
                 </header>
-                <article class="scrolldown">
-                    <div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=perlavih" defer></script>
+                <article class="statuscafe">
+                    
+                    
                     <img class="divider" src="assets/img/bubbles3.gif" alt="">
+                    
                 </article>
               </div>
 
@@ -152,9 +154,28 @@
                   <h3><img src="assets/icons/sprakles.gif" alt="">Games</h3>
                 </header>
                 <article>
-                  <p>
-                    a
-                  </p>
+                  <p class="sticker">I used to play a lot of flash games and old <b>ps2/nintendo</b> games back in <b>2009-2015</b>, but today I only play games in my computer. </p>
+                  <p class="sticker"><img class="sticker-right"  style="width: 120px;" src="assets/img/console.png" alt="">Here are some games that I'm <b>currently playing</b> (And want to play):</p>
+                      <ul class="list">
+                        <li><p>Omori</p></li>
+                        <li><p>Deltarune</p></li>
+                        <li><p>Among Us</p></li>
+                        <li><p>Minecraft</p></li>
+                        <li><p>Terraria</p></li>
+                        <li><p>Stardew Valley</p></li>
+                        <li><p>Celeste</p></li>
+                        <li><p>Undertale</p></li>
+                        <li><p>Henry Stickmin Collection</p></li>
+                        <li><p>In stars and time</p></li>
+                        <li><p>Oneshot</p></li>
+                        <li><p>Animal jam</p></li>
+                        <li><p>Madness Combat</p></li>                        
+                        <li><p>Roblox</p></li>
+                        <li><p>Yummi Nikki</p></li>
+                        <li><p>Rain World</p></li>
+                        <li><p>Your turn to die</p></li>
+                        <li><p>OFF</p></li>
+                      </ul>
                   <img class="divider" src="assets/img/memory_rain_fix_walk.gif" alt="">
                 </article>
               </div>
@@ -164,9 +185,26 @@
                   <h3><img src="assets/icons/sprakles.gif" alt="">Music</h3>
                 </header>
                 <article>
-                  <p>
-
-                  </p>
+                  <p class="sticker">My music taste is basically all envolved into the EDM genres, my favorite one being Dubstep! Others genres and subgenres that I like includes Future bass, Melodic dubstep, Hardstyle, Techno, Rocktronic, Metalstep, Midtempo and Progressive house.</p><p class="sticker"><img class="sticker-right"  style="width: 110px;" src="assets/img/radio.png" alt="">Here are some of the music producers that I like to listen:</p>
+                  <ul class="list">
+                    <li><p>ILLENIUM</p></li>
+                    <li><p>Alan Walker</p></li>
+                    <li><p>Alok</p></li>
+                    <li><p>NURKO</p></li>
+                    <li><p>Seven Lions</p></li>
+                    <li><p>K-391</p></li>
+                    <li><p>Excision</p></li>
+                    <li><p>Skrillex</p></li>
+                    <li><p>Gryffin</p></li>
+                    <li><p>Ninajirachi</p></li>
+                    <li><p>Da Tweekaz</p></li>
+                    <li><p>Marshmello</p></li>
+                    <li><p>SullivanKing</p></li>
+                    <li><p>Said The Sky</p></li>
+                    <li><p>Subtronics</p></li>
+                    <li><p>SLANDER</p></li>
+                  </ul>
+                  <img class="divider" src="assets/img/bubbles.gif" alt="">
                 </article>
               </div>
 
@@ -175,7 +213,21 @@
                   <h3><img src="assets/icons/sprakles.gif" alt="">Media</h3>
                 </header>
                 <article>
-                  <p></p>
+                  <p class="sticker">The type of media that I usually consume is mostly indie stuff. I'm not a big fan of watching series or animes from streamings services, an exception is animated movies that I loveee and watch all of them as if I were a child again.</p>
+                  <p class="sticker"><img class="sticker-right"  style="width: 120px;" src="assets/img/dogpc.png" alt="">So, here's a list of some indie series that I like to watch:</p>
+                  <ul class="list">
+                    <li><p>Murder Drones</p></li>
+                    <li><p>GameOverse</p></li>
+                    <li><p>Helluva Boss</p></li>
+                    <li><p>Hazbin Hotel</p></li>
+                    <li><p>The Amazing Digital Circus</p></li>
+                    <li><p>Planetronika</p></li>
+                    <li><p>Rodamrix Series</p></li>
+                    <li><p>Spooky Month</p></li>
+                    <li><p>Lacey Webseries</p></li>
+                    <li><p>Knights of Guinevere</p></li>
+                  </ul>
+                  <img class="divider" src="assets/img/image0-2.gif" alt="">
                 </article>
               </div>
 
@@ -202,7 +254,10 @@
         <aside class="menu">
           <div class="header"><h3><img src="assets/icons/stars.gif">Menu</h3></div>
           <div class="menu-content">
-            <ul class="buttons">
+            <button class="gallery-filter-menu-toggle gallery-bubble-control" type="button" aria-label="Toggle gallery filters" aria-expanded="false" aria-controls="gallery-filter-options">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+            </button>
+            <ul class="buttons" id="gallery-filter-options">
               <li><button class="frutiger-aero-button medium is-selected" type="button" data-filter="all" aria-pressed="true">All my arts</button></li>
               <li><button class="frutiger-aero-button medium" type="button" data-filter="drawings" aria-pressed="false">Drawings</button></li>
               <li><button class="frutiger-aero-button medium" type="button" data-filter="websites" aria-pressed="false">Websites</button></li>
@@ -223,6 +278,7 @@
           </div>
 
           <div class="arts">
+            <img src="assets/arts/yohansite.png" data-category="websites" data-description="yohanfritsch.neocities.org" alt="">
             <img src="assets/arts/image-28.png" alt="" data-category="fanarts" data-description="By Yosh" loading="lazy">
             <img src="assets/arts/IMG_1268.PNG" alt="" data-category="drawings" loading="lazy">
             <img src="assets/arts/Captura_de_tela_20261010_172041.png" alt="" data-category="drawings" loading="lazy">
@@ -401,18 +457,18 @@
 
         </div>
 
-        <button class="gallery-back-top" type="button" aria-label="Voltar ao topo da galeria" aria-hidden="true" tabindex="-1" hidden>
+        <button class="gallery-back-top gallery-bubble-control" type="button" aria-label="Voltar ao topo da galeria" aria-hidden="true" tabindex="-1" hidden>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6" /></svg>
         </button>
 
-        <div class="lightbox">
-          <button class="close">&times;</button>
-          <button class="prev">&#8249;</button>
+        <div class="lightbox gallery-lightbox" role="dialog" aria-modal="true" aria-label="Art preview">
+          <button class="close" type="button" aria-label="Close preview">&times;</button>
+          <button class="prev" type="button" aria-label="Previous image">&#8249;</button>
           <figure class="lightbox-content">
             <img src="" alt="lightbox image" />
             <figcaption class="lightbox-description" hidden></figcaption>
           </figure>
-          <button class="next">&#8250;</button>
+          <button class="next" type="button" aria-label="Next image">&#8250;</button>
         </div>
       </main>
     </section>
@@ -537,6 +593,7 @@
     </script>
     <script src="scripts/bubbleCursor.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/tradução.js"></script>
     <script src="scripts/player.js"></script>
     <script src="scripts/lightbox.js"></script>
     <script src="scripts/discord.js"></script>

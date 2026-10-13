@@ -53,7 +53,6 @@ function maximizeWindow(appWindow) {
 function restoreWindow(appWindow) {
   const previousState = maximizedWindowState.get(appWindow);
   appWindow.classList.remove('is-maximized');
-
   if (!previousState) return;
 
   appWindow.style.left = previousState.left;
@@ -69,12 +68,8 @@ function restoreWindow(appWindow) {
 }
 
 function toggleMaximize(appWindow) {
-  if (appWindow.classList.contains('is-maximized')) {
-    restoreWindow(appWindow);
-    return;
-  }
-
-  maximizeWindow(appWindow);
+  if (appWindow.classList.contains('is-maximized')) restoreWindow(appWindow);
+  else maximizeWindow(appWindow);
 }
 
 function setTaskbarSelection(windowName, isOpen) {
@@ -158,8 +153,17 @@ windows.forEach((appWindow) => {
   appWindow.querySelectorAll('.max').forEach((button) => {
     button.addEventListener('click', (event) => {
       event.stopPropagation();
+      if (window.matchMedia('(max-width: 900px)').matches) return;
       toggleMaximize(appWindow);
     });
+  });
+
+});
+
+window.addEventListener('resize', () => {
+  if (!window.matchMedia('(max-width: 900px)').matches) return;
+  windows.forEach((appWindow) => {
+    if (appWindow.classList.contains('is-maximized')) restoreWindow(appWindow);
   });
 });
 

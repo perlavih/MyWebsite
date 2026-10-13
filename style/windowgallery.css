@@ -107,6 +107,10 @@
     width: 100%;
 }
 
+.gallery-body .menu-content .gallery-filter-menu-toggle {
+    display: none;
+}
+
 .gallery-body .menu-content .buttons li {
     width: 100%;
     display: flex;
@@ -232,14 +236,10 @@
     overflow: hidden;
 }
 
-.window-gallery .gallery-body > .gallery-back-top {
+.gallery-bubble-control {
     --hue: 245;
     --sat: 0.15;
     --gloss: 0.7;
-    position: absolute;
-    right: 18px;
-    bottom: 18px;
-    z-index: 2;
     display: grid;
     place-items: center;
     width: 48px;
@@ -258,10 +258,28 @@
         inset -6px -6px 16px rgba(255, 255, 255, 0.18),
         inset 6px 10px 22px rgba(0, 0, 0, 0.06),
         0 6px 16px rgba(0, 0, 0, 0.12);
+    transition: opacity 220ms ease, transform 220ms ease, filter 180ms ease;
+}
+
+.window-gallery .gallery-body > .gallery-back-top {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2;
     opacity: 0;
     transform: translateY(8px) scale(0.88);
     pointer-events: none;
-    transition: opacity 220ms ease, transform 220ms ease, filter 180ms ease;
+}
+
+.gallery-filter-menu-toggle {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 4;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .window-gallery .gallery-body > .gallery-back-top.is-visible {
@@ -270,7 +288,7 @@
     pointer-events: auto;
 }
 
-.gallery-back-top::before {
+.gallery-bubble-control::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -289,7 +307,7 @@
     pointer-events: none;
 }
 
-.gallery-back-top::after {
+.gallery-bubble-control::after {
     content: "";
     position: absolute;
     top: 8%;
@@ -302,7 +320,7 @@
     pointer-events: none;
 }
 
-.gallery-back-top svg {
+.gallery-bubble-control svg {
     position: relative;
     z-index: 1;
     width: 20px;
@@ -315,6 +333,10 @@
 }
 
 .gallery-back-top:hover {
+    filter: brightness(1.1);
+}
+
+.gallery-filter-menu-toggle:hover {
     filter: brightness(1.1);
 }
 
@@ -332,7 +354,7 @@
     display: none;
 }
 
-.window-gallery .lightbox-content {
+.gallery-lightbox .lightbox-content {
     width: calc(100% - 120px);
     height: 90%;
     display: flex;
@@ -342,7 +364,7 @@
     margin: 0;
 }
 
-.window-gallery .lightbox-description {
+.gallery-lightbox .lightbox-description {
     flex: 0 0 auto;
     max-height: 25%;
     overflow-y: auto;
@@ -354,11 +376,11 @@
     font-size: 20px;
 }
 
-.window-gallery .lightbox-description[hidden] {
+.gallery-lightbox .lightbox-description[hidden] {
     display: none;
 }
 
-.window-gallery .lightbox img {
+.gallery-lightbox img {
     width: 100%;
     height: auto;
     flex: 1 1 0;
@@ -375,7 +397,7 @@
     transition: none;
 }
 
-.window-gallery .lightbox img:hover {
+.gallery-lightbox img:hover {
     transform: none;
 }
 
@@ -392,7 +414,6 @@
     padding: 10px;
     border: none;
     cursor: pointer;
-    border-radius: 50%;
     z-index: 1001;
 }
   
