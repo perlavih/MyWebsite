@@ -5,7 +5,7 @@ const translations = {
   'Commissions': 'Comissões',
   'My Profile': 'Meu perfil', 'Profile information': 'Informações do perfil',
   'Welcome to my website!': 'Bem-vindo ao meu site!', 'About me': 'Sobre mim',
-  'Status': 'Status', 'Games': 'Jogos', 'Music': 'Música', 'Media': 'Mídia',
+  'Status': 'Status', 'Games': 'Jogos', 'Music': 'Musica', 'Media': 'Midia',
   'Art Gallery': 'Galeria de arte', 'Menu': 'Menu',
   'Toggle gallery filters': 'Abrir ou fechar filtros da galeria',
   'Art preview': 'Prévia da arte', 'Close preview': 'Fechar prévia',

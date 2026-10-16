@@ -48,7 +48,7 @@
     width: min(750px, calc(100vw - 16px));
     max-width: calc(100vw - 16px);
     height: auto;
-    max-height: calc(100dvh - 64px);
+    max-height: calc(100dvh - 32px);
     margin: 0;
     border-radius: 10px;
     transform: translate(-50%, -50%);
