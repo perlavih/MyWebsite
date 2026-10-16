@@ -4,7 +4,7 @@ const translations = {
   'Recycle Bin': 'Lixeira', 'Home': 'Início', 'Portfolio': 'Portfólio',
   'Commissions': 'Comissões',
   'My Profile': 'Meu perfil', 'Profile information': 'Informações do perfil',
-  'Welcome to my website!': 'Bem-vindo(a) ao meu site!', 'About me': 'Sobre mim',
+  'Welcome to my website!': 'Bem-vindo ao meu site!', 'About me': 'Sobre mim',
   'Status': 'Status', 'Games': 'Jogos', 'Music': 'Música', 'Media': 'Mídia',
   'Art Gallery': 'Galeria de arte', 'Menu': 'Menu',
   'Toggle gallery filters': 'Abrir ou fechar filtros da galeria',
@@ -56,13 +56,13 @@ if (languageToggle) {
     ['.secao2 > .articles:nth-child(1) article > p.sticker', 'Eu costumava jogar muitos jogos em Flash e jogos antigos de <b>PS2 e Nintendo</b> entre <b>2009 e 2015</b>, mas hoje só jogo no meu pc.'],
     ['.secao2 > .articles:nth-child(1) article > p.sticker:nth-of-type(2)', '<img class="sticker-right" style="width: 120px;" src="assets/img/console.png" alt="">Aqui estão alguns jogos que estou <b>jogando atualmente</b> (e que quero jogar):'],
     ['.secao2 > .articles:nth-child(2) article > p.sticker:nth-of-type(1)', 'Meu gosto musical gira principalmente em torno dos gêneros de <b>EDM</b>, e meu favorito é <b>dubstep</b>! Também gosto de future bass, melodic dubstep, hardstyle, techno, rocktronic, metalstep, midtempo e progressive house.'],
-    ['.secao2 > .articles:nth-child(2) article > p.sticker:nth-of-type(2)', '<img class="sticker-right" style="width: 110px;" src="assets/img/radio.png" alt="">Aqui estão alguns produtores musicais que gosto de ouvir:'],
-    ['.secao2 > .articles:nth-child(3) article > p.sticker:nth-of-type(1)', 'O que costumo consumir é principalmente mídia independente. Não sou muito fã de séries ou animes de serviços de streaming, com exceção de filmes de animação, que amo e assisto como se eu fosse uma criança de novo kk'],
-    ['.secao2 > .articles:nth-child(3) article > p.sticker:nth-of-type(2)', '<img class="sticker-right" style="width: 120px;" src="assets/img/dogpc.png" alt="">E aqui está uma lista de séries independentes que gosto de assistir:']
+    ['.secao2 > .articles:nth-child(2) article > p.sticker:nth-of-type(2)', '<img class="sticker-right" style="width: 110px;" src="assets/img/radio.png" alt="">Aqui estão alguns <b>produtores musicais</b> que gosto de ouvir:'],
+    ['.secao2 > .articles:nth-child(3) article > p.sticker:nth-of-type(1)', 'O que costumo consumir é principalmente <b>mídia independente</b>. Não sou muito fã de séries ou animes de serviços de streaming, com exceção de filmes de <b>animação</b>, que amo e assisto como se eu fosse uma criança de novo!'],
+    ['.secao2 > .articles:nth-child(3) article > p.sticker:nth-of-type(2)', '<img class="sticker-right" style="width: 120px;" src="assets/img/dogpc.png" alt="">E aqui está uma lista de <b>séries independentes</b> que gosto de assistir:']
   ];
   const aboutTranslations = [
     '<img class="sticker-small" src="assets/icons/emoticon.png" width="50px" alt="">Sou <b>Perla Vitoria</b>, estudante de <b>Sistemas de Informação</b> em uma universidade federal. Tento viver a vida como uma jovem adulta introvertida, com ansiedade social. Nasci em <b>2006</b>, curto a ideia da junção entre natureza e tecnologia e espero que, no futuro, possamos tornar o mundo um lugar diferente.',
-    '<img class="sticker-right" src="assets/img/pc.png" alt=""> Minhas habilidades incluem <b>programar</b>, <b>fazer designs</b> e <b>desenhar</b>! quero melhorar um pouquinho nisso todos os dias. Também adoro astronomia e zoologia! Amo todos os animais, especialmente <b>coelhinhos</b> e <b>focas</b>! A minha cor favorita é <b>Ciano</b>, meu humor é meio nonsense (rio de literalmente qualquer coisa kkk) e um pouco ácido. O que me deixa feliz todos os dias são minhas amizades e meu relacionamento. Quero cuidar deles assim como cuidam de mim <3'
+    '<img class="sticker-right" src="assets/img/pc.png" alt=""> Minhas habilidades incluem <b>programar</b>, <b>fazer designs</b> e <b>desenhar</b>! quero melhorar um pouquinho nisso todos os dias. Também adoro astronomia e zoologia! Amo todos os animais, especialmente <b>coelhinhos</b> e <b>focas</b>! A minha cor favorita é <b>Ciano</b>, meu humor é meio nonsense (rio de literalmente qualquer coisa kkk) e um pouco ácido. O que me deixa feliz todos os dias são minhas <b>amizades</b> e meu <b>relacionamento</b>. Quero cuidar deles assim como cuidam de mim <3'
   ];
 
   function setSiteLanguage(language) {

@@ -496,7 +496,6 @@ article img.sticker-right {
   float: right;
   width: 150px;
   height: auto;
-  display: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -508,7 +507,6 @@ article img.sticker-left {
   float: left;
   width: 150px;
   height: auto;
-  display: none;
   transition: all 0.3s ease-in-out;
 }
 
@@ -539,17 +537,25 @@ article img.banner:hover {
 
 #statuscafe {
     padding: .5em;
-    margin-bottom: 7px;
 }
 
-#statuscafe-username {
-    margin-bottom: .5em;
+.statuscafe-username {
+    margin-bottom: 3px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
 }
 
-#statuscafe-content {
-    font-size: 16px;
+.statuscafe-content {
+    margin: 0 1em 1.5em 1em;
+    font-size: 15px;
+}
+
+#status-history {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  overflow-wrap: anywhere;
 }
 
 ul.list {

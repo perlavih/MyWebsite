@@ -2,18 +2,10 @@ const lightboxGallery = document.querySelector(".gallery");
 const lightbox = document.querySelector(".lightbox");
 const galleryWindow = lightbox.closest('.window-gallery');
 const galleryBody = galleryWindow.querySelector('.gallery-body');
-const mobileLightboxBreakpoint = window.matchMedia('(max-width: 640px)');
 
-function moveLightboxForViewport() {
-  if (mobileLightboxBreakpoint.matches && lightbox.parentElement !== document.body) {
-    document.body.append(lightbox);
-  } else if (!mobileLightboxBreakpoint.matches && lightbox.parentElement !== galleryBody) {
-    galleryBody.append(lightbox);
-  }
+if (lightbox.parentElement !== galleryBody) {
+  galleryBody.append(lightbox);
 }
-
-moveLightboxForViewport();
-mobileLightboxBreakpoint.addEventListener('change', moveLightboxForViewport);
 const lightboxImage = lightbox.querySelector("img");
 const lightboxDescription = lightbox.querySelector('.lightbox-description');
 const closeBtn = lightbox.querySelector(".close");

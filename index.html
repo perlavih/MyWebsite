@@ -115,7 +115,7 @@
                 <article>
                     <p class="sticker" style="text-align: start;">
                       <img class="sticker-small" src="assets/icons/emoticon.png" width="50px" alt="">
-                      I'm <b>Perla Vitoria</b>, a student of <b>Information Systems</b> in a Federal University, casually trying to live as an introvert young adult with social anxiety born in <b>2006</b>. I really love the concept of nature mixed with technology, so I hope we can make this world a different world in the future.</p> <p class="sticker" style="text-align: start;"><img class="sticker-right" src="assets/img/pc.png" alt=""> My habilities includes <b>coding</b>, <b>designing</b> and <b>drawing</b>, my goal is to get a little better at these stuff everyday. I also love astronomy and zoology! Love all the animals, specially <b>bunnies</b> and <b>seals</b>! I have <b>cyan</b> as my favorite color, my humor is more like a nonsense humor (I laught of literally anything) and a bit of an acid humor too. A thing that makes me feel happy everyday is my Friendships and my Relationships, I want to take care of them just like they care about me.
+                      I'm <b>Perla Vitoria</b>, a student of <b>Information Systems</b> in a Federal University, casually trying to live as an introvert young adult with social anxiety born in <b>2006</b>. I really love the concept of nature mixed with technology, so I hope we can make this world a different world in the future.</p> <p class="sticker" style="text-align: start;"><img class="sticker-right" src="assets/img/pc.png" alt=""> My habilities includes <b>coding</b>, <b>designing</b> and <b>drawing</b>, my goal is to get a little better at these stuff everyday. I also love astronomy and zoology! Love all the animals, specially <b>bunnies</b> and <b>seals</b>! I have <b>cyan</b> as my favorite color, my humor is more like a nonsense humor (I laught of literally anything) and a bit of an acid humor too. A thing that makes me feel happy everyday is my <b>friendships</b> and my <b>relationship</b>, I want to take care of them just like they care about me.
                     </p>
                     <div class="tags">
                       <div class="tag"><img src="assets/icons/beijo.png" alt=""><span>Im a Girl!</span></div>
@@ -138,8 +138,9 @@
                   <h3><img src="assets/icons/blue4.gif" alt="">Status</h3>
                 </header>
                 <article class="statuscafe">
-                    
-                    
+                    <div id="statuscafe" aria-live="polite">
+                      <div id="status-history" aria-busy="true"><p class="status-history-message">Loading status history...</p></div>
+                    </div>
                     <img class="divider" src="assets/img/bubbles3.gif" alt="">
                     
                 </article>
@@ -171,6 +172,8 @@
                         <li><p>Animal jam</p></li>
                         <li><p>Madness Combat</p></li>                        
                         <li><p>Roblox</p></li>
+                        <li><p>Hollow Knight</p></li>
+                        <li><p>VS Imposter (FNF)</p></li>
                         <li><p>Yummi Nikki</p></li>
                         <li><p>Rain World</p></li>
                         <li><p>Your turn to die</p></li>
@@ -185,7 +188,7 @@
                   <h3><img src="assets/icons/sprakles.gif" alt="">Music</h3>
                 </header>
                 <article>
-                  <p class="sticker">My music taste is basically all envolved into the EDM genres, my favorite one being Dubstep! Others genres and subgenres that I like includes Future bass, Melodic dubstep, Hardstyle, Techno, Rocktronic, Metalstep, Midtempo and Progressive house.</p><p class="sticker"><img class="sticker-right"  style="width: 110px;" src="assets/img/radio.png" alt="">Here are some of the music producers that I like to listen:</p>
+                  <p class="sticker">My music taste is basically all envolved into the <b>EDM genres</b>, my favorite one being <b>Dubstep</b>! Others genres and subgenres that I like includes Future bass, Melodic dubstep, Hardstyle, Techno, Rocktronic, Metalstep, Midtempo and Progressive house.</p><p class="sticker"><img class="sticker-right"  style="width: 110px;" src="assets/img/radio.png" alt="">Here are some of the <b>music producers</b> that I like to listen:</p>
                   <ul class="list">
                     <li><p>ILLENIUM</p></li>
                     <li><p>Alan Walker</p></li>
@@ -213,8 +216,8 @@
                   <h3><img src="assets/icons/sprakles.gif" alt="">Media</h3>
                 </header>
                 <article>
-                  <p class="sticker">The type of media that I usually consume is mostly indie stuff. I'm not a big fan of watching series or animes from streamings services, an exception is animated movies that I loveee and watch all of them as if I were a child again.</p>
-                  <p class="sticker"><img class="sticker-right"  style="width: 120px;" src="assets/img/dogpc.png" alt="">So, here's a list of some indie series that I like to watch:</p>
+                  <p class="sticker">The type of media that I usually consume is mostly <b>indie stuff</b>. I'm not a big fan of watching series or animes from streamings services, an exception is <b>animated movies</b> that I loveee and watch all of them as if I were a child again!</p>
+                  <p class="sticker"><img class="sticker-right"  style="width: 120px;" src="assets/img/dogpc.png" alt="">So, here's a list of some <b>indie series</b> that I like to watch:</p>
                   <ul class="list">
                     <li><p>Murder Drones</p></li>
                     <li><p>GameOverse</p></li>
@@ -587,8 +590,6 @@
     <script type="module">
       import Webamp from "https://unpkg.com/webamp@^2";
       const webamp = new Webamp({});
-
-      // Returns a promise indicating when it's done loading.
       webamp.renderWhenReady(document.getElementById("app"));
     </script>
     <script src="scripts/bubbleCursor.js"></script>
@@ -598,5 +599,6 @@
     <script src="scripts/lightbox.js"></script>
     <script src="scripts/discord.js"></script>
     <script src="scripts/theme.js"></script>
+    <script src="scripts/status-history.js"></script>
 </body>
 </html>
